@@ -17,8 +17,10 @@ export default {
     },
   },
   mounted() {
-    axios("https://fakestoreapi.com/products").then((res) => {
-      this.products = res.data;
+    axios(
+      "https://api.spoonacular.com/food/products/search?query=pizza&number=100&apiKey=c522fe791ad04c9686397879ccbf58ff"
+    ).then((res) => {
+      this.products = res.data.products;
       this.loading = false;
     });
   },
