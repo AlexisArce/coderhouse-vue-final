@@ -47,18 +47,8 @@ export default {
     },
 
     submit() {
-      const newUser = {
-        firstName: this.form.firstname,
-        lastName: this.form.lastname,
-        email: this.form.email,
-      };
-
-      axios({
-        method: "post",
-        headers: { "app-id": "61bd5f9981e13ce1612897e9" },
-        url: "https://dummyapi.io/data/v1/user/create",
-        data: newUser,
-      })
+      axios
+        .post("https://61ba455648df2f0017e5aa20.mockapi.io/Users", this.form)
         .then((response) => {
           console.log(response);
           this.resetForm();
@@ -66,6 +56,11 @@ export default {
         .catch(function (error) {
           console.log(error);
         });
+    },
+
+    goBack() {
+      this.$router.go(-1);
+      console.log("goBack");
     },
   },
 };

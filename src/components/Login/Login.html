@@ -14,6 +14,7 @@
             v-model="password"
             :rules="passwordRules"
             label="Contraseña"
+            type="password"
             required
           ></v-text-field>
 
@@ -25,6 +26,9 @@
             block
           >
             Ingresar
+          </v-btn>
+          <v-btn outlined color="indigo" @click="register" block>
+            Registrar
           </v-btn>
         </v-form>
       </v-col>

@@ -17,10 +17,12 @@ export default {
     },
   },
   mounted() {
-    axios("https://fakestoreapi.com/products").then((res) => {
-      this.products = res.data;
-      this.loading = false;
-    });
+    axios("https://61ba455648df2f0017e5aa20.mockapi.io/Products").then(
+      (res) => {
+        this.products = res.data;
+        this.loading = false;
+      }
+    );
   },
   methods: {
     viewItemDetails: function (item) {

@@ -12,11 +12,11 @@ export default {
   },
   computed: {},
   mounted() {
-    axios(`https://fakestoreapi.com/products/${this.$route.params.id}`).then(
-      (res) => {
-        this.product = res.data;
-      }
-    );
+    axios(
+      `https://61ba455648df2f0017e5aa20.mockapi.io/Products/${this.$route.params.id}`
+    ).then((res) => {
+      this.product = res.data;
+    });
   },
   methods: {},
 };

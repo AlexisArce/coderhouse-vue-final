@@ -9,10 +9,12 @@
         <v-card class="pa-2" outlined>
           <v-img
             :src="product.image"
+            :lazy-src="product.image"
             class="white--text align-end"
-            gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
-            height="231"
-            width="312"
+            gradient="to bottom, rgba(0,0,0,.1),
+            rgba(0,0,0,.5)"
+            max-height="250"
+            max-width="500"
           >
             <v-card-title v-text="product.title"></v-card-title>
           </v-img>

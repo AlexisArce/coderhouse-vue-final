@@ -15,7 +15,7 @@ export default {
 
   methods: {
     validate() {
-      const isValid = this.$refs.form.validate();
+      let isValid = this.$refs.form.validate();
       if (isValid) this.$router.push({ name: "Home" });
     },
     reset() {
@@ -23,6 +23,9 @@ export default {
     },
     resetValidation() {
       this.$refs.form.resetValidation();
+    },
+    register() {
+      this.$router.push({ name: "Register" });
     },
   },
 
