@@ -7,16 +7,16 @@ export default {
   props: [],
   data() {
     return {
-      product: null,
+      product: {},
     };
   },
   computed: {},
   mounted() {
-    axios(
-      `https://api.spoonacular.com/food/products/${this.$route.params.id}?apiKey=c522fe791ad04c9686397879ccbf58ff`
-    ).then((res) => {
-      this.product = res.data;
-    });
+    axios(`https://fakestoreapi.com/products/${this.$route.params.id}`).then(
+      (res) => {
+        this.product = res.data;
+      }
+    );
   },
   methods: {},
 };
