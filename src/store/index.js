@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     cart: {},
     products: [],
+    loadingProducts: false,
   },
   mutations: {
     CART(state, payload) {
@@ -15,6 +16,9 @@ export default new Vuex.Store({
     },
     PRODUCTS(state, payload) {
       state.products = payload;
+    },
+    LOADING_PRODUCTS(state, payload) {
+      state.loadingProducts = payload;
     },
   },
   actions: {
@@ -27,10 +31,12 @@ export default new Vuex.Store({
     },
 
     fetchProducts(context) {
+      context.commit("LOADING_PRODUCTS", true);
       axios
         .get("https://61ba455648df2f0017e5aa20.mockapi.io/Products")
         .then((data) => {
           context.commit("PRODUCTS", data.data);
+          context.commit("LOADING_PRODUCTS", false);
         });
     },
   },

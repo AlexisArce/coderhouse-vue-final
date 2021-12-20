@@ -2,7 +2,7 @@
   <navbar />
   <v-container fluid>
     <v-row dense>
-      <v-col v-if="loading" class="text-center">
+      <v-col v-if="loadingProducts" class="text-center">
         <Spinner message="Cargando  los productos..." />
       </v-col>
       <v-col v-for="product in products" :key="product.id" class="col-md-3">

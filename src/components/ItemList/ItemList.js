@@ -5,9 +5,7 @@ export default {
   name: "item-list",
   components: { Navbar, Spinner },
   props: [],
-  data: () => ({
-    loading: false,
-  }),
+  data: () => ({}),
 
   computed: {
     hasItems: () => {
@@ -15,6 +13,9 @@ export default {
     },
     products() {
       return this.$store.state.products;
+    },
+    loadingProducts() {
+      return this.$store.state.loadingProducts;
     },
   },
   mounted() {},
