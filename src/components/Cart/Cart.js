@@ -7,7 +7,6 @@ export default {
   },
   computed: {
     total() {
-      console.log(this.cart);
       let total = 0;
       this.cart?.products?.forEach((item) => {
         item.quantity = item.quantity || 1;
