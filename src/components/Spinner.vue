@@ -1,6 +1,12 @@
 <template lang="html">
   <section class="spinner">
-    <h3>{{ message }}</h3>
+    <v-progress-circular
+      :size="70"
+      :width="7"
+      color="purple"
+      indeterminate
+    ></v-progress-circular>
+    <h4>{{ message }}</h4>
   </section>
 </template>
 

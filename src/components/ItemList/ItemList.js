@@ -18,7 +18,9 @@ export default {
       return this.$store.state.loadingProducts;
     },
   },
-  mounted() {},
+  mounted() {
+    this.$store.dispatch("fetchProducts");
+  },
   methods: {
     viewItemDetails: function (item) {
       this.$router.push({ name: "ItemDetails", params: { id: item.id } });
