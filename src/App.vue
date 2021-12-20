@@ -16,7 +16,6 @@ export default {
 
   mounted() {
     this.$store.dispatch("fetchProducts");
-    this.$store.dispatch("fetchCart");
   },
 };
 </script>
