@@ -2,9 +2,11 @@
   <v-toolbar color="indigo" dark>
     <v-toolbar-title>e-commerce</v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn icon @click="viewCart">
-      <v-icon>mdi-cart</v-icon>
-    </v-btn>
+    <router-link to="/cart">
+      <v-btn icon @click="viewCart">
+        <v-icon>mdi-cart</v-icon>
+      </v-btn>
+    </router-link>
   </v-toolbar>
 </template>
 
