@@ -30,6 +30,23 @@ const routes = [
     name: "ItemDetails",
     component: () => import("../components/ItemDetails/index.vue"),
   },
+  {
+    path: "/administration",
+    name: "Administration",
+    component: () => import("../views/Administration.vue"),
+    beforeEnter: (to, from, next) => {
+      let isAuthenticated = true;
+      let isAdmin = true;
+      if (!isAuthenticated || !isAdmin) next({ path: "/login" });
+      else next();
+    },
+    children: [
+      {
+        path: "products",
+        component: () => import("../components/ProductsCRUD/index.vue"),
+      },
+    ],
+  },
 ];
 
 const router = new VueRouter({
