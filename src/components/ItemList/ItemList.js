@@ -1,9 +1,8 @@
-import Navbar from "../Navbar.vue";
 import Spinner from "../Spinner.vue";
 
 export default {
   name: "item-list",
-  components: { Navbar, Spinner },
+  components: { Spinner },
   props: [],
   data: () => ({}),
 

@@ -1,5 +1,5 @@
 <template lang="html">
-  <v-toolbar color="indigo" dark>
+  <v-toolbar color="black" dark fixed>
     <router-link to="/">
       <v-toolbar-title>e-commerce</v-toolbar-title>
     </router-link>
