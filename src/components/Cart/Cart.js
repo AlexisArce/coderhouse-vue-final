@@ -7,13 +7,11 @@ export default {
   },
   computed: {
     total() {
+      console.log(this.cart);
       let total = 0;
       this.cart?.products?.forEach((item) => {
-        const product = this.products.find((p) => p.id == item.productId);
-        item.title = product.title;
-        item.price = product.price;
-
-        total += item.quantity * item.price;
+        item.quantity = item.quantity || 1;
+        total += (item.quantity || 1) * item.price;
       });
 
       return total;

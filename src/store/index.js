@@ -6,7 +6,9 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    cart: {},
+    cart: {
+      products: [],
+    },
     products: [],
     loadingProducts: false,
   },
@@ -16,6 +18,9 @@ export default new Vuex.Store({
     },
     LOADING_PRODUCTS(state, payload) {
       state.loadingProducts = payload;
+    },
+    ADD_PRODUCT_TO_CART(state, payload) {
+      state.cart.products.push(payload);
     },
   },
   actions: {
@@ -27,6 +32,9 @@ export default new Vuex.Store({
           context.commit("PRODUCTS", data.data);
           context.commit("LOADING_PRODUCTS", false);
         });
+    },
+    addProductToCart(context, payload) {
+      context.commit("ADD_PRODUCT_TO_CART", payload);
     },
   },
   modules: {},

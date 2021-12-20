@@ -18,7 +18,9 @@
         <p class="text-right">
           <v-chip class="ma-2" x-large> $ {{product.price}} </v-chip>
         </p>
-        <v-btn color="primary" block> Agregar al carrito </v-btn>
+        <v-btn color="primary" @click="addProductToCart(product)" block>
+          Agregar al carrito
+        </v-btn>
       </v-col>
     </v-row>
     <v-row>

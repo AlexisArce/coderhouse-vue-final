@@ -22,8 +22,11 @@ export default {
     this.$store.dispatch("fetchProducts");
   },
   methods: {
-    viewItemDetails: function (item) {
+    viewItemDetails(item) {
       this.$router.push({ name: "ItemDetails", params: { id: item.id } });
+    },
+    addProductToCart(product) {
+      this.$store.dispatch("addProductToCart", product);
     },
   },
 };

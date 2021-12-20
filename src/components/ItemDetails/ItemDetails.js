@@ -18,5 +18,9 @@ export default {
       this.product = res.data;
     });
   },
-  methods: {},
+  methods: {
+    addProductToCart(product) {
+      this.$store.dispatch("addProductToCart", product);
+    },
+  },
 };
