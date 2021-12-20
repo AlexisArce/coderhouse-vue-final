@@ -21,6 +21,7 @@ export default new Vuex.Store({
     },
     ADD_PRODUCT_TO_CART(state, payload) {
       state.cart.products.push(payload);
+      Vue.swal("Producto agregado al carrito", "", "success");
     },
   },
   actions: {
