@@ -4,10 +4,7 @@
     <v-container fluid>
       <v-row justify="space-around">
         <v-col>
-          <v-img
-            src="../assets/pexels-rodolfo-clix-1596884.jpg"
-            aspect-ratio="1.7"
-          ></v-img>
+          <carousel />
         </v-col>
       </v-row>
       <item-list />
@@ -18,6 +15,7 @@
 <script>
 import ItemList from "../components/ItemList/index";
 import Navbar from "../components/Navbar";
+import Carousel from "../components/Carousel/index";
 
 export default {
   name: "Home",
@@ -25,6 +23,7 @@ export default {
   components: {
     ItemList,
     Navbar,
+    Carousel,
   },
 };
 </script>
