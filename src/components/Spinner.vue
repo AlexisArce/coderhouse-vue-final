@@ -1,11 +1,6 @@
 <template lang="html">
   <section class="spinner">
-    <v-progress-circular
-      :size="70"
-      :width="7"
-      color="purple"
-      indeterminate
-    ></v-progress-circular>
+    <img src="../assets/pizza_loading.gif" />
     <h4>{{ message }}</h4>
   </section>
 </template>
