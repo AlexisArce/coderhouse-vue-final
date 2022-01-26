@@ -24,9 +24,9 @@
           </v-img>
 
           <v-card-actions>
-            <v-chip class="ma-2" large>$ {{ product.price }} </v-chip>
+            <v-chip class="ma-2" large dark>$ {{ product.price }} </v-chip>
+            <el-tag v-if="product.isVeggie" type="success">Veggie</el-tag>
             <v-spacer></v-spacer>
-
             <el-button
               icon="el-icon-search"
               circle
