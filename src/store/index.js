@@ -25,7 +25,7 @@ export default new Vuex.Store({
       //TODO: AGREGAR ELEMENT ui modal
       Notification.success({
         title: "Agregado al carrito",
-        message: "El producto fue agregado al carrito correctamente!",
+        message: "El producto fue agregado al carrito!",
       });
     },
   },
