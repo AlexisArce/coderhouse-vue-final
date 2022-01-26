@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Login from "../components/Login/index";
-import Register from "../components/Register/index";
+import Login from "../components/Login";
+import Register from "../components/Register";
 
 export default {
   name: "LoginView",

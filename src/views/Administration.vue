@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import ProductsCRUD from "../components/ProductsCRUD/index";
+import ProductsCRUD from "../components/ProductsCRUD";
 
 export default {
   name: "Administration",

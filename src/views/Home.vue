@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import ItemList from "../components/ItemList/index";
+import ItemList from "../components/ItemList";
 import Navbar from "../components/Navbar";
-import Carousel from "../components/Carousel/index";
+import Carousel from "../components/Carousel";
 
 export default {
   name: "Home",

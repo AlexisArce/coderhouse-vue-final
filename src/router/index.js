@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Home from "../views/Home";
 
 Vue.use(VueRouter);
 
@@ -13,27 +13,27 @@ const routes = [
   {
     path: "/login",
     name: "Login",
-    component: () => import("../views/Login.vue"),
+    component: () => import("../views/Login"),
   },
   {
     path: "/register",
     name: "Register",
-    component: () => import("../components/Register/index.vue"),
+    component: () => import("../components/Register"),
   },
   {
     path: "/cart",
     name: "Cart",
-    component: () => import("../components/Cart/index.vue"),
+    component: () => import("../components/Cart"),
   },
   {
     path: "/products/:id",
     name: "ItemDetails",
-    component: () => import("../components/ItemDetails/index.vue"),
+    component: () => import("../components/ItemDetails"),
   },
   {
     path: "/administration",
     name: "Administration",
-    component: () => import("../views/Administration.vue"),
+    component: () => import("../views/Administration"),
     beforeEnter: (to, from, next) => {
       let isAuthenticated = true;
       let isAdmin = true;
@@ -43,7 +43,7 @@ const routes = [
     children: [
       {
         path: "products",
-        component: () => import("../components/ProductsCRUD/index.vue"),
+        component: () => import("../components/ProductsCRUD"),
       },
     ],
   },
