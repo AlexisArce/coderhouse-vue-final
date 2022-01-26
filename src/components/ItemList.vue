@@ -24,12 +24,27 @@
           </v-img>
 
           <v-card-actions>
-            <v-chip class="ma-2" large>$ {{ product.price }} </v-chip>
+            <v-chip class="ma-2" large dark>$ {{ product.price }} </v-chip>
+            <el-tag v-if="product.isVeggie" type="success">Veggie</el-tag>
             <v-spacer></v-spacer>
-            <v-btn @click="viewItemDetails(product)"> Ver detalle </v-btn>
-            <v-btn @click="addProductToCart(product)" icon>
-              <v-icon>mdi-cart</v-icon>
-            </v-btn>
+            <el-tooltip
+              class="item"
+              effect="dark"
+              content="Detalle"
+              placement="left"
+            >
+              <el-button
+                icon="el-icon-search"
+                circle
+                @click="viewItemDetails(product)"
+              ></el-button>
+            </el-tooltip>
+            <el-button
+              type="danger"
+              icon="el-icon-circle-plus-outline"
+              @click="addProductToCart(product)"
+              >Agregar</el-button
+            >
           </v-card-actions>
         </v-card>
       </v-col>

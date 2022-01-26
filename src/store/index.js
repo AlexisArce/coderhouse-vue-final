@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
+import { Notification } from "element-ui";
 
 Vue.use(Vuex);
 
@@ -21,7 +22,11 @@ export default new Vuex.Store({
     },
     ADD_PRODUCT_TO_CART(state, payload) {
       state.cart.products.push(payload);
-      Vue.swal("Producto agregado al carrito", "", "success");
+      //TODO: AGREGAR ELEMENT ui modal
+      Notification.success({
+        title: "Agregado al carrito",
+        message: "El producto fue agregado al carrito!",
+      });
     },
   },
   actions: {

@@ -63,9 +63,6 @@ export default {
     cart() {
       return this.$store.state.cart;
     },
-    products() {
-      return this.$store.state.products;
-    },
   },
   mounted() {},
   methods: {},
