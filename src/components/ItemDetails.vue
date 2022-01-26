@@ -15,18 +15,39 @@
           </v-img>
         </v-col>
         <v-col class="col-md-4">
-          <p class="text-h4">{{ product.title }}</p>
-          <p class="text-right">
-            <v-chip class="ma-2" x-large> $ {{ product.price }} </v-chip>
+          <p class="text-h4 text-center">{{ product.title }}</p>
+          <p class="text-center">{{ product.description }}</p>
+          <p class="text-center">
+            {{ product.rating }}
+            <el-rate
+              v-model="product.rating"
+              disabled
+              show-score
+              text-color="#ff9900"
+              score-template=""
+            >
+            </el-rate>
           </p>
-          <v-btn color="primary" @click="addProductToCart(product)" block>
-            Agregar al carrito
-          </v-btn>
-        </v-col>
-      </v-row>
-      <v-row>
-        <v-col class="offset-md-1 col-md-10">
-          <div class="text--primary">{{ product.description }}</div>
+          <el-tag v-if="product.isVeggie" type="success">Veggie</el-tag>
+          <p class="text-right">
+            <v-chip class="ma-2" x-large dark> $ {{ product.price }} </v-chip>
+          </p>
+          <p class="text-center">
+            <el-input-number
+              v-model="quantity"
+              @change="handleChange"
+              :min="1"
+              :max="10"
+            ></el-input-number>
+          </p>
+
+          <v-btn
+            depressed
+            color="error"
+            @click="addProductToCart(product)"
+            block
+            >Agregar al carrito</v-btn
+          >
         </v-col>
       </v-row>
     </v-container>
@@ -44,6 +65,7 @@ export default {
   data() {
     return {
       product: {},
+      quantity: 1,
     };
   },
   computed: {},
@@ -58,6 +80,7 @@ export default {
     addProductToCart(product) {
       this.$store.dispatch("addProductToCart", product);
     },
+    handleChange() {},
   },
 };
 </script>
