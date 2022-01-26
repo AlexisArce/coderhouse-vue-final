@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import ItemList from "../components/ItemList/index";
+import ItemList from "../components/ItemList";
 import Navbar from "../components/Navbar";
 import Carousel from "../components/Carousel";
 
