@@ -15,7 +15,7 @@
 <script>
 import ItemList from "../components/ItemList/index";
 import Navbar from "../components/Navbar";
-import Carousel from "../components/Carousel/index";
+import Carousel from "../components/Carousel";
 
 export default {
   name: "Home",
