@@ -26,4 +26,12 @@
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.app-title {
+  position: relative;
+  display: block;
+  width: 620px;
+  margin: auto;
+  z-index: 9999;
+}
+</style>
