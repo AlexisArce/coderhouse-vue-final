@@ -30,7 +30,7 @@
             <el-tooltip
               class="item"
               effect="dark"
-              content="Detalle"
+              content="ver detalles"
               placement="left"
             >
               <el-button
@@ -39,10 +39,7 @@
                 @click="viewItemDetails(product)"
               ></el-button>
             </el-tooltip>
-            <el-button
-              type="danger"
-              icon="el-icon-circle-plus-outline"
-              @click="addProductToCart(product)"
+            <el-button type="danger" @click="addProductToCart(product)"
               >Agregar</el-button
             >
           </v-card-actions>
@@ -63,13 +60,13 @@ export default {
 
   computed: {
     hasItems: () => {
-      return this.products?.length > 0;
+      return this.$store.getters.productsCount > 0;
     },
     products() {
-      return this.$store.state.products;
+      return this.$store.getters.products;
     },
     loadingProducts() {
-      return this.$store.state.loadingProducts;
+      return this.$store.getters.loadingProducts;
     },
   },
   mounted() {

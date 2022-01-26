@@ -43,5 +43,16 @@ export default new Vuex.Store({
       context.commit("ADD_PRODUCT_TO_CART", payload);
     },
   },
+  getters: {
+    products: (state) => {
+      return state.products;
+    },
+    productsCount: (state) => {
+      return state.products?.length;
+    },
+    loadingProducts: (state) => {
+      return state.loadingProducts;
+    },
+  },
   modules: {},
 });
