@@ -32,6 +32,5 @@
   display: block;
   width: 620px;
   margin: auto;
-  z-index: 9999;
 }
 </style>

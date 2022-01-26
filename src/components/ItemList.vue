@@ -26,10 +26,18 @@
           <v-card-actions>
             <v-chip class="ma-2" large>$ {{ product.price }} </v-chip>
             <v-spacer></v-spacer>
-            <v-btn @click="viewItemDetails(product)"> Ver detalle </v-btn>
-            <v-btn @click="addProductToCart(product)" icon>
-              <v-icon>mdi-cart</v-icon>
-            </v-btn>
+
+            <el-button
+              icon="el-icon-search"
+              circle
+              @click="viewItemDetails(product)"
+            ></el-button>
+            <el-button
+              type="danger"
+              icon="el-icon-circle-plus-outline"
+              @click="addProductToCart(product)"
+              >Agregar</el-button
+            >
           </v-card-actions>
         </v-card>
       </v-col>
