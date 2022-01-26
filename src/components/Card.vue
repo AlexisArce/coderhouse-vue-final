@@ -49,7 +49,12 @@
       }
     },
     methods: {
-
+      viewItemDetails(item) {
+        this.$router.push({ name: "ItemDetails", params: { id: item.id } });
+      },
+      addProductToCart(product) {
+        this.$store.dispatch("addProductToCart", product);
+      },
     },
     computed: {
 
