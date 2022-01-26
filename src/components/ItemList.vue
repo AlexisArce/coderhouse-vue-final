@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import Spinner from "./Spinner.vue";
+import Spinner from "./Spinner";
 
 export default {
   name: "item-list",

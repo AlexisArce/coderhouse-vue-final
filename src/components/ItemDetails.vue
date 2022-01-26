@@ -35,7 +35,7 @@
 
 <script>
 import axios from "axios";
-import Navbar from "./Navbar.vue";
+import Navbar from "./Navbar";
 
 export default {
   name: "item-details",
