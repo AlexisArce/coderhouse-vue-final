@@ -21,6 +21,9 @@ export default {
     return {
       items: [
         {
+          src: "./assets/pexels-pixabay-280453.jpg",
+        },
+        {
           src: "./assets/pexels-rodolfo-clix-1596884_2.jpg",
         },
         {
@@ -31,9 +34,6 @@ export default {
         },
         {
           src: "./assets/pexels-narda-yescas-1566837.jpg",
-        },
-        {
-          src: "./assets/pexels-pixabay-280453.jpg",
         },
       ],
     };

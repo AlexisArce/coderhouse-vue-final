@@ -1,0 +1,1683 @@
+@font-face {
+    font-family:'futurandaltcn';
+    src: url('../fontface/futurandaltcn-medium.eot');
+    src: url('../fontface/futurandaltcn-medium.eot?#iefix') format('embedded-opentype'),
+         url('../fontface/futurandaltcn-medium.woff2') format('woff2'),
+         url('../fontface/futurandaltcn-medium.woff') format('woff'),
+         url('../fontface/futurandaltcn-medium.ttf') format('truetype'),
+         url('../fontface/futurandaltcn-medium.svg#futurandaltcn') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'PEIXE';
+    src: url('../fontface/PEIXE.eot');
+    src: url('../fontface/PEIXE.eot?#iefix') format('embedded-opentype'),
+         url('../fontface/PEIXE.woff2') format('woff2'),
+         url('../fontface/PEIXE.woff') format('woff'),
+         url('../fontface/PEIXE.ttf') format('truetype'),
+         url('../fontface/PEIXE.svg#PEIXE') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face {
+    font-family:'PEIXE';
+    src: url('../fontface/PoplarStd.eot');
+    src: url('../fontface/PoplarStd.eot?#iefix') format('embedded-opentype'),
+         url('../fontface/PoplarStd.woff2') format('woff2'),
+         url('../fontface/PoplarStd.woff') format('woff'),
+         url('../fontface/PoplarStd.ttf') format('truetype'),
+         url('../fontface/PoplarStd.svg#PoplarStd') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+html {
+	height:100%;
+}
+
+* {
+	font-smooth:always;
+    -webkit-font-smoothing:antialiased;
+    font-smoothing:antialiased; 
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    min-width:320px; 
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+	font-size:17px;
+	line-height:21px;
+    color:#000;
+}
+
+img {
+    margin:0;
+    padding:0;
+    border:none;
+    transition:all 150ms linear;
+    -webkit-transition:all 150ms linear;
+    -moz-transition:all 150ms linear;
+    -o-transition:all 150ms linear;
+    -ms-transition:all 150ms linear;
+}
+
+a {
+    text-decoration:none;
+    outline:none;
+    transition:all 200ms linear;
+    -webkit-transition:all 200ms linear;
+    -moz-transition:all 200ms linear;
+    -o-transition:all 200ms linear;
+    -ms-transition:all 200ms linear;
+}
+
+h1, h2, h3, h4 {
+	font:inherit;
+	font-size:58px;
+	line-height:normal;
+	font-weight:normal;
+	vertical-align:baseline;
+	margin:0;
+	padding:0;
+	border:0;
+}
+
+p {
+    margin:0;
+    padding:0;
+}
+
+ul {
+    margin:0;
+    padding:0;
+    list-style:none;
+}
+
+section {
+    margin:0;
+    padding:0;
+    font-size:0;
+    line-height:0;
+}
+
+iframe {
+	margin:0;
+	padding:0;
+}
+
+.clear {
+	clear:both;
+}
+
+.thumb {
+	position:relative;
+	float:left;
+	width:100%;
+  	margin:0;
+  	padding:0;
+  	font-size:0;
+  	line-height:0;
+  	border:none;
+}
+
+.portada .thumb.desktop {
+	display:block;
+}
+
+.portada .thumb.mobile {
+	display:none;
+}
+
+
+/*/// HEADER ///*/
+
+header {
+	position:absolute;
+	display:block;
+	width:100%;
+	z-index:9999;
+}
+
+.recorte_hd_suc {
+    display:none;
+    position:absolute;
+    top:100px;
+    width:100%;
+    height:50px;
+}
+
+.centrador_HD {
+	position:relative;
+	width:100%;
+	max-width:1360px;
+	margin:auto;
+	padding:0 40px;
+}
+
+.ClipLogo {
+    position:relative;
+    display:inline-block;
+}
+
+.logo {
+	float:left;
+	width:220px;
+}
+
+ul.navegacion {
+	float:right;
+	margin-top:43px;
+}
+
+ul.navegacion li {
+	position:relative;
+	display:inline-block;
+	list-style-type:none;
+	margin:0;
+	padding:0;
+}
+
+ul.navegacion li a {
+	display:inline-block;
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+	font-size:22px;
+	letter-spacing:0.5px;
+	color:#FFF;
+	background:transparent;
+	padding:10px;
+	margin:0 7px;
+}
+
+ul.navegacion li a:hover {
+	background:#CF0A2C;
+}
+
+ul.navegacion li a.btn_pedi {
+	color:#FFF;
+	background:#CF0A2C;
+}
+
+ul.navegacion li a.btn_pedi:hover {
+	color:#CF0A2C;
+	background:#FFF;
+}
+
+#MenuH {
+    display:none;
+    float:left;
+    margin-top:-100px;
+    margin-left:-10px;
+}
+
+.menu {
+    display:inline-block;
+    width:40px;
+    height:30px;
+}
+
+#mmenu:active,
+#mmenu:focus {
+	outline:none;
+	background:none;
+	border:none;
+}
+
+#elmenu {
+	display:none;
+	position:absolute;
+	width:100%;
+	height:100%;
+	padding:30px 15px 90px;
+	background:#CF0A2C;
+	z-index:9999;
+	top:0;
+	right:0;
+	text-align:center;
+}
+
+.ClipCerrar {
+    float:none;
+    margin-bottom:20px;
+}
+
+.ico-cerrar {
+	display:inline-block;
+	width:35px;
+	height:35px;
+	border:none;
+	background-image:url('../imgs/cerrar.svg');
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+ul.botones {
+    padding:0;
+}
+
+ul.botones li {
+	list-style:none;
+}
+
+ul.botones li a {
+	display:inline-block;
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+	font-size:25px;
+	line-height:45px;
+	letter-spacing:0.5px;
+	text-decoration:none;
+	text-align:center;
+	color:#FFF;
+	transition:color 150ms linear;
+    -webkit-transition:color 150ms linear;
+    -moz-transition:color 150ms linear;
+    -o-transition:color 150ms linear;
+    -ms-transition:color 150ms linear;
+}
+
+ul.botones li a:hover {
+	color:#000;
+}
+
+ul.botones li a.btn_pedi {
+	color:#FFF;
+	padding:0 30px;
+	margin-top:12px;
+	background:#000;
+}
+
+ul.botones li a.btn_pedi:hover {
+	color:#CF0A2C;
+	background:#000;
+}
+
+ul.botones .redes {
+	margin-top:12px;
+}
+
+ul.redes {
+	margin-top:30px;
+}
+
+ul.redes li a {
+	font-size:19px;
+	line-height:32px;
+	color:#FFF;
+}
+
+ul.redes li a:hover {
+	color:#999;
+}
+
+#elmenu .ClipLogo {
+	position:relative;
+	width:200px;
+	margin-top:70px;
+}
+
+#elmenu .logo {
+	width:200px;
+}
+
+#contenedor_home {
+	position:relative;
+}
+
+.ClipSlide {
+	position:relative;
+}
+
+.portada {
+	position:relative;
+	display:inline-block;
+}
+
+.oscurece {
+	position:absolute;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	width:100%;
+	background:#000;
+	opacity:0.3;
+	z-index:8888;
+}
+
+.titulonazo_absolute {
+	position:absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+}
+
+.titulonazo {
+	display:table;
+	width:100%;
+	height:100%;
+}
+
+.titulonazo_contenedor {
+	position:relative;
+	display:table-cell;
+	height:inherit;
+	vertical-align:middle;
+	text-align:center;
+	z-index:9998;
+}
+
+.grafico_amamos {
+	width:650px;
+	margin-top:-10px;
+	margin-left:-20px;
+}
+
+.lonja {
+	position:relative;
+	width:100%;
+	margin:0;
+	z-index:9998;
+}
+
+.lonja.home#pedi_online {
+    display:none;
+}
+
+.recorte {
+	position:relative;
+	display:block;
+    width:100%;
+    height:50px;
+    border:none;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-color:transparent;
+    z-index:9998;
+}
+
+.recorte.top {
+	margin-top:-50px;
+}
+
+.portada .recorte.top {
+	position:absolute;
+	bottom:0;
+}
+
+.recorte.bottom {
+	margin-bottom:-50px;
+}
+
+.lonja_int {
+	width:100%;
+}
+
+.centrador_lonja {
+	position:relative;
+	width:100%;
+	max-width:775px;
+	text-align:center;
+	color:#FFF;
+	margin:auto;
+	padding-top:15px;
+	padding-bottom:160px;
+	z-index:9998;
+}
+
+h2.etiqueta {
+	float:left;
+	padding-top:15px;
+	margin-right:30px;
+}
+
+.descuentos {
+    width:420px;
+    margin-top:-19px;
+}
+
+.sale-delivery {
+    width:450px;
+    margin-top:5px;
+}
+
+.estamos-cerca {
+    width:490px;
+    margin-top:5px;
+}
+
+.franquicias {
+    width:450px;
+    margin-top:4px;
+}
+
+.ico-app {
+	float:left;
+	width:130px;
+	margin:0 8px;
+}
+
+.btn_mapa {
+	float:left;
+	width:240px;
+	margin-top:-4px;
+}
+
+#concepto {
+	position:relative;
+	display:block;
+	width:100%;
+    border:none;
+    background-image:url('../imgs/foto_concepto_d.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:top left;
+    background-color:#EFEFEF;
+    overflow:hidden;
+}
+
+.concepto_main {
+	position:relative;
+	float:right;
+	width:calc(50% - 40px);
+	width:-webkit-calc(50% - 40px);
+	width:-moz-calc(50% - 40px);
+	width:-o-calc(50% - 40px);
+	padding:70px 30px 100px 20px;
+	background-color:#CF0A2C;
+}
+
+.concepto_left {
+	position:relative;
+	float:left;
+	width:50%;
+}
+
+.tira {
+	position:absolute;
+	top:0;
+	right:-40px;
+	width:50px;
+	height:1920px;
+}
+
+.concepto_main .tira.mobile {
+	display:none;
+    top:-50px;
+    right:0;
+    width:1920px;
+    height:50px;
+}
+
+.fuego_desde {
+	width:590px;
+	margin-bottom:23px;
+}
+
+p.concepto {
+	width:88%;
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+	font-size:27px;
+	line-height:34px;
+	color:#FFF;
+	padding-left:17px;
+}
+
+.altazapi {
+	width:570px;
+	margin-left:30px;
+}
+
+.foton {
+	position:relative;
+	display:block;
+    width:100%;
+    border:none;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-color:#EFEFEF;
+}
+
+.foton.pizzas {
+	height:680px;
+}
+
+.grafico-tentate {
+	width:680px;
+	margin:-64px 0 23px;
+}
+
+.btn_conocelas {
+	width:230px;
+}
+
+.lonja.l_franquicias {
+	margin-bottom:40px;
+}
+
+.centrador_lonja.l_franquicias {
+	max-width:772px;
+}
+
+.btn_sumate {
+	float:left;
+	width:290px;
+}
+
+.centrador_lonja.l_redes {
+	max-width:820px;
+	padding-top:0;
+	padding-bottom:40px;
+}
+
+.nuestras_redes {
+	float:left;
+	width:248px;
+	padding-top:3px;
+	margin-left:20px;
+	margin-right:40px;
+}
+
+.grafico-red {
+	height:130px;
+	margin:15px 16px 0;
+}
+
+.grafico-red.instagram {
+    height:110px;
+}
+
+.grafico-red.youtube {
+    height:104px;
+}
+
+
+/*/// MAIN ///*/
+
+.main {
+	width:100%;
+	padding-top:10px;
+}
+
+.main h2 {
+	position:relative;
+	font-family:'PEIXE', Arial, Helvetica, sans-serif;
+	font-size:100px;
+	text-align:center;
+	color:#CF0A2C;
+	z-index:9998;
+}
+
+body.secc_productos .main {
+    padding-top:20px;
+    overflow:hidden;
+}
+
+.tit_nuestras-pizzas {
+    position:relative;
+    display:block;
+    width:620px;
+    margin:auto;
+    z-index:9999;
+}
+
+
+/*/// PRODUCTOS ///*/
+
+.ClipPaletas {
+    position:relative;
+    float:left;
+    width:calc((50% - 24px));
+    width:-webkit-calc((100% + 1px));
+    width:-moz-calc((50% - 24px));
+    width:-o-calc((50% - 24px));
+    margin-top:45px;
+    background:#FFF;
+}
+
+.cuadro_staff {
+    position:relative;
+    float:left;
+    width:25%;
+    height:auto;
+    margin:0 0 -1px 0;
+    padding:0;
+    padding-top:25%;
+    border:none;
+    border-top:1px solid #FFF;
+    border-right:1px solid #FFF;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.cuadro_staff .thumb {
+    position:absolute;
+    width:100%;
+    margin:0;
+    padding:0;
+    border:none;
+    top:0;
+    right:0;
+    transition:all .3s ease-in-out;
+}
+
+.cuadro_staff:hover .thumb {
+    -webkit-transform:scale(1.075);
+    -moz-transform:scale(1.075);
+    -ms-transform:scale(1.075);
+    -o-transform:scale(1.075);
+}
+
+.cuadro_staff:hover .titulo_servicio_int,.capsula_int:hover+.titulo_servicio_int {
+    opacity:0.8;
+}
+
+.cuadro_staff:hover .mascara_img,.capsula_int:hover+.mascara_img {
+    opacity:0.8;
+}
+
+.mascara_img {
+    position:absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    background-color:rgba(35,31,32,.8);
+    opacity:0;
+    transition:opacity 0.5s;
+    -webkit-transition:opacity 0.5s;
+    -moz-transition:opacity 0.5s;
+    -o-transition:opacity 0.5s;
+    -ms-transition:opacity 0.5s;
+    z-index:1;
+}
+
+.capsula {
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align:center;
+    z-index:9999;
+    height:100%;
+    width:100%;
+}
+
+.capsula_int {
+    position:absolute;
+    display:block;
+    top:50%;
+    width:100%;
+    transform:translateY(-50%);
+}
+
+.titulo_servicio {
+    display:table;
+    width:100%;
+}
+
+.titulo_servicio_int {
+    font-size:38px;
+    letter-spacing:2px;
+    line-height:44px;
+    color:#FFF;
+    text-align:center;
+    padding:0;
+    opacity:0;
+    transition:opacity 0.5s;
+    -webkit-transition:opacity 0.5s;
+    -moz-transition:opacity 0.5s;
+    -o-transition:opacity 0.5s;
+    -ms-transition:opacity 0.5s;
+}
+
+.filete_staff {
+    display:inline-block;
+    letter-spacing:0.5px;
+    color:#FFF;
+    margin:0 25px;
+}
+
+.nombre_staff {
+    font-family:'PoplarStd', Arial, Helvetica, sans-serif;
+    font-size:44px;
+    line-height:48px;
+    text-transform:uppercase;
+    color:#FFF;
+    padding:10px 20px 3px;
+}
+
+.cargo_staff {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:27px;
+    line-height:32px;
+    color:#FFF;
+    padding:2px 15px 5px;
+}
+
+
+/*/// RRHH ///*/
+
+.ClipFormulario {
+	width:100%;
+}
+
+.form_cotiza {
+    padding:45px 0;
+}
+
+.centrador_cotiza {
+	max-width:700px;
+	margin:auto;
+}
+
+.ClipCotizacion {
+    margin:auto;
+}
+
+#frm_res ::-webkit-input-placeholder {
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:40px;
+    letter-spacing:0.3px;
+    color:#000;
+}
+
+#frm_res ::-moz-placeholder {
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:40px;
+    letter-spacing:0.3px;
+    color:#000;
+}
+
+#frm_res ::-o-placeholder {
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:40px;
+    letter-spacing:0.3px;
+    color:#000;
+}
+
+#frm_res ::-ms-input-placeholder {
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:40px;
+    letter-spacing:0.3px;
+    color:#000;
+}
+
+#frm_res input.text {
+    float:left;
+    width:calc((50% - 24px));
+    width:-webkit-calc((50% - 24px));
+    width:-moz-calc((50% - 24px));
+    width:-o-calc((50% - 24px));
+    height:40px;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:40px;
+    letter-spacing:0.3px;
+    color:#000;
+    background:#FFF;
+    border:1px solid #000;
+    padding:2px 10px;
+    margin:0 12px;
+    margin-bottom:24px;
+    border-radius:0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    -o-border-radius:0;
+    -ms-border-radius:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    -o-appearance:none;
+    appearance:none;
+    outline:none;
+}
+
+#frm_res input.text.number {
+    font-size:19px;
+}
+
+#frm_res input.costado {
+    margin-left:15px;
+    margin-right:0;
+}
+
+#frm_res input.number {
+    font-size:19px;
+}
+
+#frm_res textarea.text {
+	display:block;
+    width:calc((100% - 20px));
+    width:-webkit-calc((100% - 20px));
+    width:-moz-calc((100% - 20px));
+    width:-o-calc((100% - 20px));
+    height:184px;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:26px;
+    letter-spacing:0.3px;
+    color:#000;
+    border:1px solid #000;
+    background:#FFF;
+    padding:4px 12px;
+    margin:0 auto 24px;
+    border-radius:0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    -o-border-radius:0;
+    -ms-border-radius:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    -o-appearance:none;
+    appearance:none;
+    outline:none;
+}
+
+.enviar {
+    display:block;
+    text-align:center;
+    outline:none;
+    background:none;
+    border:none;
+    margin:10px auto;
+    -webkit-appearance:none;
+    cursor:pointer;
+}
+
+.btn_enviar {
+    width:130px;
+}
+
+.error_formulario_res {
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:23px;
+    line-height:29px;
+    letter-spacing:0.3px;
+    text-align:center;
+    color:#000;
+    margin-top:-25px;
+    margin-bottom:40px;
+}
+
+.ClipAdjuntar {
+	display:block;
+    width:calc((100% - 20px));
+    width:-webkit-calc((100% - 20px));
+    width:-moz-calc((100% - 20px));
+    width:-o-calc((100% - 20px));
+    border:1px solid #383838;
+    background:#FFF;
+    padding:18px 12px 20px;
+    margin:0 auto 24px;
+}
+
+.tit_adjuntar {
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:0.3px;
+    color:#000;
+    text-align:center;
+    margin:20px auto 10px;
+}
+
+.btn_adjuntar {
+    display:block;
+    width:170px;
+    height:38px;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:20px;
+    line-height:36px;
+    letter-spacing:0.3px;
+    text-align:center;
+    margin:18px auto 0;
+    outline:none;
+    color:#FFF;
+    background:#000;
+    transition:background 200ms linear;
+    -webkit-transition:background 200ms linear;
+    -moz-transition:background 200ms linear;
+    -o-transition:background 200ms linear;
+    -ms-transition:background 200ms linear;
+}
+
+.btn_adjuntar:hover {
+    background:#CF0A2C;
+}
+
+#fake_file_name {
+	max-width:600px;
+    font-size:19px;
+    line-height:21px;
+    letter-spacing:0.3px;
+    text-align:center;
+    padding:15px 30px 0;
+    margin:auto;
+}
+
+
+/*/// FRANQUICIAS ///*/
+
+body.secc_franquicias .lonja_x2.right {
+	color:#FFF;
+	background:#CF0A2C;
+}
+
+.solicitud.mobile {
+	display:none;
+}
+
+.desplegable_res {
+	position:relative;
+    float:left;
+    width:calc((50% - 24px));
+    width:-webkit-calc((50% - 24px));
+    width:-moz-calc((50% - 24px));
+    width:-o-calc((50% - 24px));
+    height:40px;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:34px;
+    letter-spacing:0.3px;
+    color:#000;
+    /*background:#FFF;*/
+    border:1px solid #000;
+    padding:2px 10px;
+    margin:0 12px;
+    margin-bottom:24px;
+    border-radius:0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    -o-border-radius:0;
+    -ms-border-radius:0;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    -o-appearance:none;
+    appearance:none;
+    outline:none;
+    background:url(../imgs/flechita.png) top right no-repeat #FFF;
+}
+
+.desplegable_res.costado {
+    margin-left:15px;
+    margin-right:0;
+}
+
+
+/*/// SUCURSALES ///*/
+
+.ClipMapa {
+    position:fixed;
+    /*width:50%;*/
+    width:calc(100% - 330px);
+    width:-webkit-calc(100% - 330px);
+    width:-moz-calc(100% - 330px);
+    width:-o-calc(100% - 330px);
+    padding-top:100px;
+    z-index:10;
+}
+
+#map {
+    min-height:calc(100vh - 90px);
+    height:100%;
+    width:100%;
+}
+
+.ClipFiltros {
+    position:relative;
+    display:inline-block;
+    float:right;
+    /*width:50%;*/
+    width:330px;
+    height:100%;
+    min-height:calc(100vh - 100px);
+    margin:auto;
+    padding-top:135px;
+    padding-bottom:50px;
+    background:#FFF;
+    overflow:hidden;
+}
+
+.centrador_distribuidores {
+    max-width:1400px;
+    min-height:calc((100vh - 640px));
+    margin:auto;
+    padding:50px 30px 0 45px;
+}
+
+.centrador_distribuidores h2 {
+    font-family:'PEIXE', Arial, Helvetica, sans-serif;
+    font-size:70px;
+    margin-bottom:25px;
+}
+
+.Clip_distribuidores_left {
+    position:relative;
+    float:left;
+    width:370px;
+    margin-bottom:40px;
+}
+
+.Clip_distribuidores_right {
+    float:left;
+    width:100%;
+}
+
+.Clip_distribuidores_right_int {
+    float:left;
+    /*width:50%;*/
+    width:100%;
+}
+
+#Distribuidores_Select {
+    position:relative;
+    width:245px;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    text-align:left;
+    text-align-last:left;
+    text-transform:uppercase;
+    color:#CF0A2C;
+    padding:8px 10px;
+    border:1px solid #CF0A2C !important;
+    background:transparent;
+    box-shadow:initial;
+    border-radius:initial !important;
+    -webkit-appearance:none;
+    border-radius:0;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    -o-border-radius:0;
+    -ms-border-radius:0;
+    outline:initial;
+    z-index:3;
+}
+
+#Distribuidores_Select option {
+    color:#383738;
+}
+
+.flecha_desplegable {
+    position:absolute;
+    width:34px;
+    height:38px;
+    top:2px;
+    left:210px;
+}
+
+.Clip_distribuidor:nth-child(2n+1) {
+    clear:none;
+}
+
+.Clip_distribuidor {
+    float:none;
+    width:100%;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:18px;
+    line-height:22px;
+    color:#000;
+    padding-right:0;
+    margin-bottom:30px;
+}
+
+.localidad {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:21px;
+    line-height:25px;
+    letter-spacing:0.2px;
+    font-weight:bold;
+    text-transform:uppercase;
+    color:#000;
+    margin-bottom:3px;
+}
+
+.ClipMasDistribuidor {
+    display:inline-block;
+    margin-left:-21px;
+}
+
+.ico-mas {
+    display:none;
+    float:left;
+    width:14px;
+    margin-top:4px;
+    margin-right:7px; 
+}
+
+.distribuidora {
+    float:left;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:18px;
+    line-height:24px;
+    letter-spacing:0.2px;
+    text-transform:uppercase;
+    color:#CF0A2C;
+    margin-bottom:-3px;
+    padding-left:21px;
+}
+
+.distribuidor {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:18px;
+    line-height:24px;
+    letter-spacing:0.2px;
+    color:#000;
+    margin-bottom:7px;
+}
+
+.representante {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:18px;
+    line-height:24px;
+    letter-spacing:0.2px;
+    color:#000;
+    margin:0;
+}
+
+.datos {
+    /*display:none;*/
+    margin-top:-2px;
+}
+
+.datos.activado {
+    display:block;
+}
+
+.texto {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:18px;
+    line-height:24px;
+    letter-spacing:0.2px;
+    color:#000;
+    margin:0;
+}
+
+.texto:hover {
+    /*color:#CF0A2C;*/
+    color:#000;
+}
+
+.texto a {
+    color:#000;
+}
+
+.horarios {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:18px;
+    line-height:24px;
+    letter-spacing:0.2px;
+    color:#000;
+    margin-bottom:20px;
+}
+
+.popup {
+    position:relative;
+    display:block;
+    width:270px;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:15px;
+    line-height:19px;
+    letter-spacing:0.2px;
+    word-break:break-all !important;
+    color:#000;
+}
+
+.popup .distribuidor {
+    font-size:19px;
+    line-height:23px;
+    letter-spacing:0.2px;
+    color:#CF0A2C;
+    margin-bottom:0;
+}
+
+.popup .domicilio {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:17px;
+    line-height:22px;
+    letter-spacing:0.2px;
+    color:#000;
+}
+
+.popup .horarios {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:17px;
+    line-height:22px;
+    letter-spacing:0.2px;
+    color:#000;
+}
+
+.popup .localidad {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:17px;
+    line-height:22px;
+    letter-spacing:0.2px;
+    color:#000;
+}
+
+.popup .telefono {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:17px;
+    line-height:22px;
+    letter-spacing:0.2px;
+    color:#000;
+}
+
+.popup .representante {
+    font-size:17px;
+    line-height:22px;
+    letter-spacing:0.2px;
+    color:#000;
+    margin-bottom:1px;
+}
+
+.popup .correo {
+    display:inline-block;
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:17px;
+    line-height:22px;
+    letter-spacing:0.2px;
+    color:#000;
+    margin-top:1px;
+}
+
+.gm-style .gm-style-iw-c {
+    max-width:300px !important;
+    padding:15px !important;
+    overflow:hidden !important;
+}
+
+.gm-style .gm-style-iw-c button.gm-ui-hover-effect {
+    top:0 !important;
+    right:0 !important;
+}
+
+.gm-style .gm-style-iw-d {
+    width:100% !important;
+    max-width:300px !important;
+    overflow:hidden !important;
+}
+
+.no_resultado {
+    font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+    font-size:18px;
+    line-height:22px;
+    letter-spacing:0.2px;
+    color:#000;
+}
+
+
+/*/// FOOTER ///*/
+
+footer {
+	position:relative;
+	height:240px;
+	line-height:0;
+	background:#1A1A1A;
+}
+
+.centrador_ft {
+	width:100%;
+	max-width:1800px;
+	margin:auto;
+}
+
+.datos_ft {
+	position:absolute;
+	font-family:'futurandaltcn', Arial, Helvetica, sans-serif;
+	font-size:20px;
+	letter-spacing:0.5px;
+	color:#FFF;
+}
+
+.left_ft {
+	left:30px;
+	bottom:35px;
+}
+
+.right_ft {
+	right:30px;
+	bottom:30px;
+}
+
+.ico-sobre {
+	width:20px;
+	margin-right:5px;
+	margin-bottom:-4px;
+}
+
+.casilla {
+	font-size:23px;
+	color:#FFF;
+}
+
+.ClipLogo_ft {
+	position:absolute;
+	display:block;
+	left:0;
+	right:0;
+	bottom:0;
+	width:220px;
+	margin:0 auto;
+}
+
+.logo_ft {
+	width:220px;
+}
+
+
+/*/// QUERIES ///*/
+
+@media screen and (max-width:1730px) {
+	.grafico_amamos { width:560px; margin-top:10px; }
+	#pedi_online .centrador_lonja { padding-top:5px; }
+	#estamos_cerca .centrador_lonja { padding-top:0; margin:-2px auto -3px; }
+	.centrador_lonja.l_franquicias { padding-top:0; margin:-7px auto -4px; }
+    .tit_nuestras-pizzas { width:570px; margin:-12px auto 0; }
+}
+
+@media screen and (max-width:1490px) {
+	.grafico_amamos { width:500px; }
+	.fuego_desde { width:540px; }
+    .nombre_staff { font-size:38px; line-height:41px; }
+    .cargo_staff { font-size:24px; line-height:28px; }
+}
+
+@media screen and (max-width:1390px) {
+	.fuego_desde { width:530px; }
+}
+
+@media screen and (max-width:1290px) {
+	.fuego_desde { width:480px; }
+}
+
+@media screen and (max-width:1270px) {
+	.ClipLogo { display:block; width:180px; margin:auto; text-align:center; }
+	.logo { float:none; width:180px; }
+	.ClipLogo_ft { width:180px; }
+	.logo_ft { width:180px; }
+	ul.navegacion { display:none; }
+	#MenuH { display:block; }
+	.grafico_amamos { width:300px; margin-top:70px; }
+	h2.etiqueta { font-size:70px; }
+	.l_franquicias h2.etiqueta { margin-right:20px; padding-top:22px; }
+	.ico-app { width:100px; }
+	#pedi_online .centrador_lonja { max-width:580px; padding-top:0; margin:-22px auto -36px; }
+	.lonja.home#pedi_online .centrador_lonja { max-width:540px; }
+    #pedi_online .centrador_lonja h2.etiqueta { font-size:70px; padding-top:24px; margin-right:20px; }
+	.descuentos { width:300px; }
+    #estamos_cerca .centrador_lonja { max-width:524px; padding-top:0; padding-bottom:110px; margin:-10px auto -3px; }
+	#estamos_cerca .centrador_lonja h2.etiqueta { margin-right:20px; }
+	.centrador_lonja.l_franquicias { max-width:540px; padding-top:0; margin:-20px auto 0; }
+	.lonja.l_franquicias { margin-bottom:20px; }
+	.concepto_main { padding:50px 48px 110px 0; }
+	.fuego_desde { width:420px; }
+	p.concepto { width:100%; font-size:25px; line-height:31px; padding-left:12px; }
+	.btn_mapa { width:190px; margin-top:-10px; }
+	.grafico-tentate { width:500px; margin:-75px 0 23px; }
+	.btn_conocelas { width:210px; }
+	.foton.pizzas { height:640px; }
+	.btn_sumate { width:240px; }
+	.centrador_lonja.l_redes { max-width:634px; margin-top:-15px; padding:0 0 30px; }
+	.nuestras_redes { width:160px; margin-left:30px; margin-right:10px; }
+    .grafico-red { height:90px; margin:7px 14px 0; }
+    .grafico-red.instagram { height:80px; }
+    .grafico-red.youtube { height:74px; }
+	footer { height:250px; overflow:hidden; }
+	.left_ft { left:25px; }
+	.right_ft { right:25px; }
+	.datos_ft { font-size:18px; }
+	.casilla { font-size:22px; }
+	.main h2 { font-size:85px; }
+	.ClipFiltros { padding-top:110px; }
+	.ClipMapa { padding-top:90px; }
+	.Clip_distribuidor { padding-right:0; }
+	.Clip_distribuidores_right_int { width:100%; }
+	.centrador_distribuidores { padding:30px 30px 0 45px; }
+	.centrador_distribuidores h2 { font-size:60px; }
+    .btn_enviar { width:110px; }
+    .sale-delivery { display:block; width:280px; margin-top:3px; }
+    .estamos-cerca { display:block; width:310px; margin-top:4px; }
+    .franquicias { display:block; width:264px; margin-top:5px; }
+    .cuadro_staff { width:33.3%; padding-top:33.3%; }
+    .tit_nuestras-pizzas { width:450px; margin:-20px auto -5px; }
+}
+
+@media screen and (max-width:1023px) {
+	.portada .thumb.desktop { display:none; }
+	.portada .thumb.mobile { display:block; }
+	.grafico_amamos { width:400px; margin-top:-20px; }
+	#pedi_online .recorte.bottom { background-position-x:-220px; }
+	#concepto { background-position:-340px -320px; }
+	.concepto_left { width:100%; }
+	.concepto_main { width:100%; padding:25px 60px 110px 30px; margin-top:400px; }
+	.concepto_left .tira { display:none; }
+	.concepto_main .tira.mobile { display:block; }
+	.fuego_desde { margin-bottom:20px; }
+	p.concepto { font-size:23px; line-height:30px; }
+	.datos_ft.left_ft span { display:none; }
+	.main h2 { font-size:75px; }
+	.form_cotiza { padding:40px 50px; }
+	.ClipMapa { position:relative; width:100%; padding-top:80px; }
+	#map { min-height:initial; height:450px; }
+    .ClipFiltros { float:left; width:100%; height:initial; min-height:initial; padding-top:0; padding-bottom:90px; }
+    .centrador_distribuidores { padding:30px 25px 0 25px;  }
+    .centrador_distribuidores h2 { font-size:53px; }
+    .Clip_distribuidores_right { margin-top:0 !important; }
+    .ico-mas { margin-right:9px; }
+    .cuadro_staff { width:50%; padding-top:50%; }
+    .tit_nuestras-pizzas { width:370px; }
+}
+
+@media screen and (max-width:767px) {
+	.ClipLogo { width:160px; }
+	.logo { width:160px; }
+	.ClipLogo_ft { width:160px; }
+	.logo_ft { width:160px; }
+	#MenuH { margin-top:-84px; margin-left:-20px; }
+	.grafico_amamos { width:350px; margin-top:0; margin-left:-18px; }
+	#pedi_online .centrador_lonja { max-width:450px; margin:-24px auto -56px; }
+    .lonja.home#pedi_online .centrador_lonja { max-width:450px; }
+	#pedi_online .centrador_lonja h2.etiqueta { font-size:60px; padding-top:15px; margin-right:16px; }
+	.lonja.home#pedi_online .centrador_lonja h2.etiqueta { padding-top:22px; }
+    .descuentos { width:240px; }
+    .ico-app { width:80px; }
+	#pedi_online .recorte.bottom { background-position-x:-340px; }
+	.concepto_main .tira.mobile { right:-90px; }
+	.fuego_desde { width:380px; }
+	.concepto_main { padding:25px 60px 95px 30px; }
+	h2.etiqueta { font-size:60px; }
+	.btn_mapa { width:170px; }
+	#estamos_cerca .centrador_lonja { max-width:460px; padding-bottom:100px; margin:-14px auto -3px; }
+	#estamos_cerca .recorte.bottom { background-position-x:-230px; }
+	.foton.pizzas { height:500px; }
+	.grafico-tentate { width:400px; margin:-80px 0 23px; }
+    .btn_conocelas { width:180px; }
+	.btn_sumate { width:200px; }
+	.centrador_lonja.l_franquicias { max-width:454px; margin:-25px auto; }
+    .centrador_lonja.l_redes { max-width:396px; margin-top:-15px; padding-bottom:25px; }
+	.nuestras_redes { width:114px; padding-top:0; margin-top:-7px; margin-left:26px; margin-right:0; }
+	.grafico-red { height:54px; margin:0 9px; }
+    .grafico-red.instagram { height:48px; }
+    .grafico-red.youtube { height:46px; }
+	.lonja.redes .recorte.bottom { background-position-x:-110px; }
+	footer { height:200px; }
+	.left_ft { left:20px; }
+	.right_ft { right:20px; }
+	.datos_ft { font-size:17px; }
+	.casilla { font-size:19px; }
+	.main { padding-top:10px; }
+	.main h2 { font-size:45px; text-align:left; margin-top:-12px; margin-left:25px; }
+	.form_cotiza { padding:20px 25px 40px; }
+	#frm_res ::-webkit-input-placeholder { font-size:20px; }
+	#frm_res ::-moz-placeholder { font-size:20px; }
+	#frm_res ::-o-placeholder { font-size:20px; }
+	#frm_res ::-ms-input-placeholder { font-size:20px; }
+	#frm_res input.text { width:100%; font-size:20px; margin:10px 0; }
+	#frm_res textarea.text { width:100%; font-size:20px; line-height:25px; margin:-3px 0 25px; }
+	#frm_res input.text.number { font-size:18px; }
+	#frm_res input.number { font-size:18px; }
+	.ClipAdjuntar { width:100%; margin-top:10px; }
+	.desplegable_res { width:100%; font-size:20px; margin:10px 0 !important; }
+	.desplegable_res.costado { margin-bottom:20px !important; }
+	.error_formulario_res { font-size:20px; line-height:24px; text-align:left; margin-top:-15px; margin-bottom:20px; }
+    .btn_enviar { width:120px; }
+	.tit_adjuntar { font-size:19px; }
+	.btn_adjuntar { font-size:19px; }
+	.centrador_distribuidores h2 { display:none; }
+	.ClipMapa { padding-top:80px; }
+    .sale-delivery { width:240px; margin-top:1px; }
+    .estamos-cerca { width:266px; margin-top:2px; }
+    .franquicias { width:226px; margin-top:1px; }
+    .filete_staff { margin:0 12px; }
+    .nombre_staff { font-size:28px; line-height:31px; padding:3px 0; }
+    .cargo_staff { font-size:20px; line-height:24px; padding:2px 10px 5px; }
+    body.secc_productos .main { margin-top:-33px; }
+    .tit_nuestras-pizzas { width:250px; margin:-10px auto 5px; }
+    .ClipPaletas { margin-top:16px; }
+}
+
+@media screen and (max-width:639px) {
+	.grafico_amamos { width:250px; margin-top:30px; }
+	#pedi_online .centrador_lonja h2.etiqueta { font-size:42px; padding-top:10px; margin-right:15px; }
+	.ico-app { width:75px; margin:0 4px; }
+	#pedi_online .recorte.top { background-position-x:-100px; }
+	#pedi_online .centrador_lonja { max-width:354px; margin:-28px auto -85px; }
+    .lonja.home#pedi_online .centrador_lonja { max-width:326px; }
+	#pedi_online .recorte.bottom { background-position-x:-420px; }
+	.concepto_main { margin-top:260px; padding:15px 20px 90px 20px; }
+	.fuego_desde { width:310px; margin-bottom:15px; }
+	p.concepto { font-size:20px; line-height:27px; }
+	#estamos_cerca .centrador_lonja h2.etiqueta { font-size:42px; padding-top:1px; margin-right:15px; }
+	#estamos_cerca .centrador_lonja { max-width:330px; padding-bottom:70px; margin:-23px auto -3px; }
+	.btn_mapa { width:126px; }
+	#estamos_cerca .recorte.bottom { background-position-x:-426px; }
+	.grafico-tentate { width:280px; margin-bottom:15px; }
+    .btn_conocelas { width:160px; }
+	.foton.pizzas { height:400px; }
+	.l_franquicias h2.etiqueta { font-size:42px; padding-top:10px; margin-right:10px; }
+	.btn_sumate { width:160px; }
+	.centrador_lonja.l_franquicias { max-width:330px; margin:-35px auto 0; padding-bottom:126px; }
+	.lonja.l_franquicias { margin-bottom:0; }
+	.lonja.l_franquicias .recorte.top { background-position-x:-60px; }
+	.lonja.redes .recorte.top { background-position-x:-150px; }
+	.datos_ft { display:none; }
+	footer { height:180px; }
+	#elmenu .ClipLogo { width:180px; margin-top:50px; }
+	#elmenu .logo { width:180px; }
+	.correo { line-height:18px; margin-bottom:15px; }
+    .sale-delivery { width:166px; margin-top:-6px; }
+    .estamos-cerca { width:186px; margin-top:10px; }
+    .franquicias { width:158px; margin-top:10px; }
+    .filete_staff { margin:0 25px; }
+    .nombre_staff { font-size:21px; line-height:24px; }
+    .cargo_staff { font-size:18px; line-height:20px; padding:0 10px; }
+    .descuentos { width:194px; margin-top:-9px; }
+    .ico-app { width:64px; }
+}
+
+@media screen and (max-width:479px) {
+	.popup { line-height:19px; }
+	.Clip_distribuidores_left { width:100%; }
+	#Distribuidores_Select { width:100%; }
+	.flecha_desplegable { left:initial; top:4px; right:5px; }
+    .Clip_distribuidores_left { margin-bottom:30px; }
+    /*.Clip_distribuidor { margin-bottom:40px; }*/
+    .horarios { margin-bottom:25px; }
+    .localidad { font-size:22px; }
+    .distribuidora { font-size:19px; }
+    .texto { font-size:19px; line-height:24px; }
+    .filete_staff { margin:0 20px; }
+}
+
+@media screen and (max-width:399px) {
+	.ClipLogo { width:150px; }
+	.logo { width:150px; }
+	.ClipLogo_ft { width:150px; }
+	.logo_ft { width:150px; }
+	#MenuH { margin-top:-80px; margin-left:-25px; }
+	.grafico_amamos { width:220px; }
+	#pedi_online .centrador_lonja { max-width:334px; margin:-28px auto -90px; }
+	#pedi_online .centrador_lonja h2.etiqueta { font-size:38px; padding-top:11px; margin-right:12px; }
+	.descuentos { width:184px; margin-top:-10px; }
+    .ico-app { width:60px; }
+	.lonja.home#pedi_online .centrador_lonja { max-width:304px; }
+    .concepto_main { margin-top:260px; padding:5px 20px 80px 20px; }
+	.fuego_desde { width:280px; }
+	#estamos_cerca .centrador_lonja { max-width:296px; padding-bottom:65px; }
+	#estamos_cerca .centrador_lonja h2.etiqueta { font-size:36px; padding-top:9px; margin-right:12px; }
+	.btn_mapa { width:120px; }
+	.l_franquicias h2.etiqueta { font-size:36px; padding-top:16px; margin-right:7px; }
+	.btn_sumate { width:146px; }
+	.centrador_lonja.l_franquicias { max-width:290px; margin:-36px auto 0; padding-bottom:120px; }
+	.centrador_lonja.l_redes { margin-top:-25px; padding-bottom:20px; }
+    .grafico-red { margin:7px 6px 0; }
+	.nuestras_redes { width:100px; margin-top:4px; }
+	#elmenu .ClipLogo { margin-top:30px; }
+	.main h2 { font-size:43px; }
+    .btn_conocelas { width:150px; }
+    .btn_enviar { width:110px; }
+    .sale-delivery { width:154px; margin-top:-7px; }
+    .estamos-cerca { width:160px; margin-top:2px; }
+    .franquicias { width:136px; margin-top:3px; }
+    #map { height:300px; }
+    body.secc_productos .main { padding-top:23px; }
+    .tit_nuestras-pizzas { width:240px; }
+    .filete_staff { margin:0 10px; }
+    .nombre_staff { font-size:19px; line-height:22px; padding:0; }
+    .cargo_staff { font-size:17px; line-height:20px; }
+}
+
+@media screen and (max-width:374px) {
+	.nuestras_redes { width:100px; margin-top:6px; }
+	.main h2 { font-size:40px; }
+    .nombre_staff { font-size:18px; line-height:21px; }
+    .cargo_staff { font-size:16px; line-height:18px; }
+}
+
+@media screen and (max-width:359px) {
+	.ClipLogo { width:140px; }
+	.logo { width:140px; }
+	.ClipLogo_ft { width:140px; }
+	.logo_ft { width:140px; }
+	#MenuH { margin-top:-80px; margin-left:-25px; }
+	.grafico_amamos { width:190px; margin-top:35px; }
+    .descuentos { width:154px; margin-top:-12px; }
+	.ico-app { width:50px; }
+	#pedi_online .centrador_lonja h2.etiqueta { font-size:34px; padding-top:14px; }
+	#pedi_online .centrador_lonja { max-width:284px; margin:-30px auto -100px; }
+    .lonja.home#pedi_online .centrador_lonja { max-width:266px; }
+	.concepto_main { margin-top:220px; padding:5px 20px 80px 15px; }
+	#estamos_cerca .centrador_lonja h2.etiqueta { font-size:34px; margin-right:10px; }
+	.btn_mapa { width:114px; }
+	#estamos_cerca .centrador_lonja { max-width:280px; padding-bottom:61px; }
+	.grafico-tentate { width:240px; margin-top:-62px; }
+    .btn_conocelas { width:140px; }
+	.foton.pizzas { height:350px; }
+	.l_franquicias h2.etiqueta { font-size:34px; }
+	.btn_sumate { width:136px; }
+	.centrador_lonja.l_franquicias { max-width:274px; margin:-30px auto 0; padding-bottom:120px; }
+	.grafico-red { height:45px; }
+    .grafico-red.instagram { height:40px; }
+    .grafico-red.youtube { height:38px; }
+    .nuestras_redes { width:90px; margin-top:3px; margin-left:20px; }
+	.main h2 { font-size:38px; }
+    .btn_enviar { width:100px; }
+    .sale-delivery { width:136px; }
+    .estamos-cerca { width:150px; }
+    .franquicias { width:128px; }
+    .filete_staff { margin:0 5px; }
+    .nombre_staff { font-size:16px; line-height:20px; padding:0; }
+    .cargo_staff { font-size:15px; line-height:17px; }
+    .tit_nuestras-pizzas { width:220px; }
+}
