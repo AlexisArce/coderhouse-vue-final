@@ -27,11 +27,18 @@
             <v-chip class="ma-2" large dark>$ {{ product.price }} </v-chip>
             <el-tag v-if="product.isVeggie" type="success">Veggie</el-tag>
             <v-spacer></v-spacer>
-            <el-button
-              icon="el-icon-search"
-              circle
-              @click="viewItemDetails(product)"
-            ></el-button>
+            <el-tooltip
+              class="item"
+              effect="dark"
+              content="Detalle"
+              placement="left"
+            >
+              <el-button
+                icon="el-icon-search"
+                circle
+                @click="viewItemDetails(product)"
+              ></el-button>
+            </el-tooltip>
             <el-button
               type="danger"
               icon="el-icon-circle-plus-outline"
