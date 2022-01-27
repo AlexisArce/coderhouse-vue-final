@@ -39,7 +39,4 @@
 }
 </script>
 
-<style scoped lang="scss">
-.navbar {
-}
-</style>
+<style scoped lang="scss"></style>

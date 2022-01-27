@@ -27,10 +27,16 @@
 </script>
 
 <style scoped lang="scss">
-.app-title {
+.app-title img {
   position: relative;
   display: block;
-  width: 620px;
+  width: 500px;
   margin: auto;
+}
+
+@media (max-width: 540px) {
+  .app-title img {
+    width: 250px;
+  }
 }
 </style>
