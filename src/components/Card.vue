@@ -16,6 +16,7 @@
     <v-card-actions>
       <v-chip class="ma-2" large dark>$ {{ product.price }} </v-chip>
       <el-tag v-if="product.isVeggie" type="success">Veggie</el-tag>
+      <i v-if="product.rating === 5" class="el-icon-medal-1"></i>
       <v-spacer></v-spacer>
       <el-tooltip
         class="item"
@@ -37,7 +38,6 @@
 </template>
 
 <script lang="js">
-
   export default  {
     name: 'card',
     props: ["product"],
@@ -63,4 +63,8 @@
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.el-icon-medal-1 {
+  font-size: 1.5em !important;
+}
+</style>

@@ -29,6 +29,10 @@
             </el-rate>
           </p>
           <el-tag v-if="product.isVeggie" type="success">Veggie</el-tag>
+          <el-tag v-if="product.rating === 5" effect="dark" type="info"
+            >La elegida por el pueblo</el-tag
+          >
+          <i v-if="product.rating === 5" class="el-icon-medal-1"></i>
           <p class="text-right">
             <v-chip class="ma-2" x-large dark> $ {{ product.price }} </v-chip>
           </p>
@@ -86,6 +90,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-icon-medal-1 {
+  font-size: 1.5em !important;
+}
 @media (max-width: 600px) {
   .item-details img {
     width: 540px;
