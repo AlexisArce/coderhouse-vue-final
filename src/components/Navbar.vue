@@ -10,13 +10,13 @@
         ></v-img>
       </router-link>
       <v-spacer></v-spacer>
-      <router-link to="/cart">
-        <v-btn icon class="mx-2">
-          <v-icon>mdi-cart</v-icon>
-        </v-btn>
-      </router-link>
       <router-link to="/login">
         <el-avatar :size="30" :src="circleUrl"></el-avatar>
+      </router-link>
+      <router-link to="/cart">
+        <el-badge :value="cartProductsCount" :max="10" class="item mx-5">
+          <i class="el-icon-shopping-cart-2"></i>
+        </el-badge>
       </router-link>
     </v-toolbar>
   </v-app-bar>
@@ -38,6 +38,9 @@
     methods: {
     },
     computed: {
+       cartProductsCount(){
+        return this.$store.getters.cartProductsCount;
+      }
     }
 }
 </script>
@@ -45,5 +48,9 @@
 <style scoped lang="scss">
 .v-application a {
   text-decoration: none;
+}
+.el-icon-shopping-cart-2 {
+  font-size: 28px;
+  color: white;
 }
 </style>

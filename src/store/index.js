@@ -50,6 +50,12 @@ export default new Vuex.Store({
     productsCount: (state) => {
       return state.products?.length;
     },
+    cart: (state) => {
+      return state.cart;
+    },
+    cartProductsCount: (state) => {
+      return state.cart.products?.length;
+    },
     loadingProducts: (state) => {
       return state.loadingProducts;
     },

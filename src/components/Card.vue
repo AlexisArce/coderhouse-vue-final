@@ -57,9 +57,7 @@
         this.$store.dispatch("addProductToCart", product);
       },
     },
-    computed: {
-
-    }
+    computed: {}
 }
 </script>
 
