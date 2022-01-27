@@ -8,6 +8,7 @@
             rgba(0,0,0,.5)"
       max-height="250"
       max-width="500"
+      @click="viewItemDetails(product)"
     >
       <v-card-title v-text="product.title"></v-card-title>
     </v-img>
