@@ -3,7 +3,7 @@
     <navbar />
     <v-container fluid v-if="product" class="mt-4">
       <v-row>
-        <v-col class="offset-md-1 col-md-6">
+        <v-col offset-md="1" md="6" sm="12">
           <v-img
             :src="product.image"
             max-height="800"
@@ -14,7 +14,7 @@
           >
           </v-img>
         </v-col>
-        <v-col class="col-md-4">
+        <v-col md="4" sm="12">
           <p class="text-h4 text-center">{{ product.title }}</p>
           <p class="text-center">{{ product.description }}</p>
           <p class="text-center">
