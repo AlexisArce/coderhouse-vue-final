@@ -14,7 +14,7 @@
         <el-avatar :size="30" :src="circleUrl"></el-avatar>
       </router-link>
       <router-link to="/cart">
-        <el-badge :value="cartProductsCount" :max="10" class="item ms-5">
+        <el-badge :value="cartProductsCount" :max="10" class="item ms-4">
           <i class="el-icon-shopping-cart-2"></i>
         </el-badge>
       </router-link>
