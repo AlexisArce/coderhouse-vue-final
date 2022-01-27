@@ -11,9 +11,12 @@
       </router-link>
       <v-spacer></v-spacer>
       <router-link to="/cart">
-        <v-btn icon>
+        <v-btn icon class="mx-2">
           <v-icon>mdi-cart</v-icon>
         </v-btn>
+      </router-link>
+      <router-link to="/login">
+        <el-avatar :size="30" :src="circleUrl"></el-avatar>
       </router-link>
     </v-toolbar>
   </v-app-bar>
@@ -29,7 +32,7 @@
     },
     data () {
       return {
-
+        circleUrl: "https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png",
       }
     },
     methods: {
@@ -39,4 +42,8 @@
 }
 </script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.v-application a {
+  text-decoration: none;
+}
+</style>

@@ -3,7 +3,7 @@
     <v-img
       :src="product.image"
       :lazy-src="product.image"
-      class="white--text align-end"
+      class="white--text align-end product-image"
       gradient="to bottom, rgba(0,0,0,.1),
             rgba(0,0,0,.5)"
       max-height="250"
@@ -66,5 +66,9 @@
 <style scoped lang="scss">
 .el-icon-medal-1 {
   font-size: 1.5em !important;
+}
+
+.product-image {
+  cursor: pointer;
 }
 </style>
