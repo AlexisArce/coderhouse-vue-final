@@ -3,7 +3,7 @@
     <navbar />
     <v-container fluid v-if="product" class="mt-4">
       <v-row>
-        <v-col offset-md="1" md="6" sm="12" xs="12">
+        <v-col offset-md="1" md="6" sm="12" cols="12">
           <v-img
             :src="product.image"
             max-height="800"
@@ -14,7 +14,7 @@
           >
           </v-img>
         </v-col>
-        <v-col md="4" sm="12" xs="12">
+        <v-col md="4" sm="12" cols="12">
           <p class="text-h4 text-center">{{ product.title }}</p>
           <p class="text-center">{{ product.description }}</p>
           <p class="text-center">
@@ -85,4 +85,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@media (max-width: 600px) {
+  .item-details img {
+    width: 540px;
+  }
+}
+</style>
