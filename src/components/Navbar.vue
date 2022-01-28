@@ -38,8 +38,8 @@
     methods: {
     },
     computed: {
-       cartProductsCount(){
-        return this.$store.getters.cartProductsCount;
+      cartProductsCount(){
+        return this.$store.getters.totalItems;
       }
     }
 }

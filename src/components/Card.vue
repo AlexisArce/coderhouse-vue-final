@@ -54,7 +54,10 @@
         this.$router.push({ name: "ItemDetails", params: { id: item.id } });
       },
       addProductToCart(product) {
-        this.$store.dispatch("addProductToCart", product);
+        this.$store.dispatch("addProductToCart",  {
+        ...product,
+        quantity: 1,
+      });
       },
     },
     computed: {}

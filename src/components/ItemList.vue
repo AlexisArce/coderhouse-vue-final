@@ -28,7 +28,7 @@ export default {
 
   computed: {
     hasItems: () => {
-      return this.$store.getters.productsCount > 0;
+      return this.$store.getters.totalItems > 0;
     },
     products() {
       return this.$store.getters.products;

@@ -78,13 +78,20 @@ export default {
       `https://61ba455648df2f0017e5aa20.mockapi.io/Products/${this.$route.params.id}`
     ).then((res) => {
       this.product = res.data;
+      this.scrollToTop();
     });
   },
   methods: {
     addProductToCart(product) {
-      this.$store.dispatch("addProductToCart", product);
+      this.$store.dispatch("addProductToCart", {
+        ...product,
+        quantity: this.quantity,
+      });
     },
     handleChange() {},
+    scrollToTop() {
+      window.scrollTo(0, 0);
+    },
   },
 };
 </script>

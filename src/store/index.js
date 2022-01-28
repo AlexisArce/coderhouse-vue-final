@@ -2,6 +2,7 @@ import Vue from "vue";
 import Vuex from "vuex";
 import axios from "axios";
 import { Notification } from "element-ui";
+import { roundTwoDecimals } from "../helpers/functions";
 
 Vue.use(Vuex);
 
@@ -20,11 +21,20 @@ export default new Vuex.Store({
     LOADING_PRODUCTS(state, payload) {
       state.loadingProducts = payload;
     },
-    ADD_PRODUCT_TO_CART(state, payload) {
-      state.cart.products.push(payload);
-      //TODO: AGREGAR ELEMENT ui modal
+    ADD_PRODUCT_TO_CART(state, item) {
+      let { products } = state.cart;
+      const index = products.findIndex((i) => i.id === item.id);
+
+      if (index > -1) {
+        const oldQuantity = products[index].quantity;
+        item.quantity = oldQuantity + item.quantity;
+        Vue.set(products, index, item);
+      } else {
+        products.push(item);
+      }
+
       Notification.success({
-        title: "Agregado al carrito",
+        title: "Agregado",
         message: "El producto fue agregado al carrito!",
       });
     },
@@ -47,14 +57,20 @@ export default new Vuex.Store({
     products: (state) => {
       return state.products;
     },
-    productsCount: (state) => {
-      return state.products?.length;
-    },
     cart: (state) => {
       return state.cart;
     },
-    cartProductsCount: (state) => {
-      return state.cart.products?.length;
+    totalItems(state) {
+      const { products } = state.cart;
+
+      return products.reduce((acum, prod) => acum + prod.quantity, 0);
+    },
+    totalAmount(state) {
+      const { products } = state.cart;
+
+      return roundTwoDecimals(
+        products.reduce((acum, prod) => acum + prod.quantity * prod.price, 0)
+      );
     },
     loadingProducts: (state) => {
       return state.loadingProducts;

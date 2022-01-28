@@ -27,7 +27,7 @@
       </v-row>
       <v-row justify="space-around" class="m-4">
         <v-col class="offset-md-8 col-md-2">
-          <strong>Total: $ {{ total }}</strong>
+          <strong>Total: $ {{ totalAmount }}</strong>
         </v-col>
       </v-row>
       <v-row>
@@ -51,17 +51,11 @@ export default {
     return {};
   },
   computed: {
-    total() {
-      let total = 0;
-      this.cart?.products?.forEach((item) => {
-        item.quantity = item.quantity || 1;
-        total += (item.quantity || 1) * item.price;
-      });
-
-      return total;
-    },
     cart() {
-      return this.$store.state.cart;
+      return this.$store.getters.cart;
+    },
+    totalAmount() {
+      return this.$store.getters.totalAmount;
     },
   },
   mounted() {},
