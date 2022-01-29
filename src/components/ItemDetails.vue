@@ -45,8 +45,11 @@
               :max="10"
             ></el-input-number>
           </p>
-
+          <router-link v-if="goToCart" to="/cart">
+            <v-btn depressed color="error" block>Ir al carrito</v-btn>
+          </router-link>
           <v-btn
+            v-if="!goToCart"
             depressed
             color="error"
             @click="addProductToCart(product)"
@@ -71,6 +74,7 @@ export default {
     return {
       product: {},
       quantity: 1,
+      goToCart: false,
     };
   },
   computed: {},
@@ -88,6 +92,7 @@ export default {
         ...product,
         quantity: this.quantity,
       });
+      this.goToCart = true;
     },
     scrollToTop() {
       window.scrollTo(0, 0);
@@ -100,6 +105,11 @@ export default {
 .el-icon-medal-1 {
   font-size: 1.5em !important;
 }
+
+.v-application a {
+  text-decoration: none !important;
+}
+
 @media (max-width: 600px) {
   .item-details img {
     width: 540px;

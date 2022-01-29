@@ -30,7 +30,10 @@
           @click="viewItemDetails(product)"
         ></el-button>
       </el-tooltip>
-      <el-button type="danger" @click="addProductToCart(product)"
+      <router-link v-if="goToCart" to="/cart">
+        <el-button type="danger" class="ms-2">Carrito </el-button>
+      </router-link>
+      <el-button v-else type="danger" @click="addProductToCart(product)"
         >Agregar</el-button
       >
     </v-card-actions>
@@ -46,7 +49,7 @@
     },
     data () {
       return {
-
+        goToCart: false
       }
     },
     methods: {
@@ -55,9 +58,11 @@
       },
       addProductToCart(product) {
         this.$store.dispatch("addProductToCart",  {
-        ...product,
-        quantity: 1,
-      });
+          ...product,
+          quantity: 1,
+        });
+
+        this.goToCart = true
       },
     },
     computed: {}
@@ -67,6 +72,10 @@
 <style scoped lang="scss">
 .el-icon-medal-1 {
   font-size: 1.5em !important;
+}
+
+.v-application a {
+  text-decoration: none !important;
 }
 
 .product-image {
