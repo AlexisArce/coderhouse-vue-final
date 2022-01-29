@@ -39,7 +39,6 @@
           <p class="text-center">
             <el-input-number
               v-model="quantity"
-              @change="handleChange"
               :min="1"
               :max="10"
             ></el-input-number>
@@ -88,7 +87,6 @@ export default {
         quantity: this.quantity,
       });
     },
-    handleChange() {},
     scrollToTop() {
       window.scrollTo(0, 0);
     },

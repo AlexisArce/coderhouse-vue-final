@@ -22,7 +22,7 @@ export default new Vuex.Store({
       state.loadingProducts = payload;
     },
     ADD_PRODUCT_TO_CART(state, item) {
-      let { products } = state.cart;
+      const { products } = state.cart;
       const index = products.findIndex((i) => i.id === item.id);
 
       if (index > -1) {
@@ -38,6 +38,14 @@ export default new Vuex.Store({
         message: "El producto fue agregado al carrito!",
       });
     },
+    REMOVE_PRODUCT_FROM_CART(state, id) {
+      state.cart.products = state.cart.products.filter(
+        (item) => item.id !== id
+      );
+    },
+    CLEAR_CART(state) {
+      state.cart.products = [];
+    },
   },
   actions: {
     fetchProducts(context) {
@@ -51,6 +59,12 @@ export default new Vuex.Store({
     },
     addProductToCart(context, payload) {
       context.commit("ADD_PRODUCT_TO_CART", payload);
+    },
+    removeProductFromCart(context, id) {
+      context.commit("REMOVE_PRODUCT_FROM_CART", id);
+    },
+    clearCart(context) {
+      context.commit("CLEAR_CART");
     },
   },
   getters: {
