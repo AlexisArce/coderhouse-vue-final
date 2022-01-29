@@ -29,7 +29,13 @@
               </thead>
               <tbody>
                 <tr v-for="item in cart.products" :key="item.id">
-                  <td class="text-left">{{ item.title }}</td>
+                  <td class="text-left">
+                    <el-link
+                      :underline="false"
+                      @click="viewItemDetails(item)"
+                      >{{ item.title }}</el-link
+                    >
+                  </td>
                   <td class="text-right">{{ item.price }}</td>
                   <td class="text-center">
                     <el-input-number
@@ -110,6 +116,9 @@ export default {
   },
   mounted() {},
   methods: {
+    viewItemDetails(item) {
+      this.$router.push({ name: "ItemDetails", params: { id: item.id } });
+    },
     removeProduct(item) {
       this.$store.dispatch("removeProductFromCart", item.id);
     },
