@@ -69,17 +69,19 @@
         </v-col>
       </v-row>
       <v-row v-if="totalItems">
-        <v-col class="offset-md-7 col-md-5">
-          <el-button icon="el-icon-close" plain type="danger">Vaciar</el-button>
-          <router-link to="/">
-            <el-button icon="el-icon-sell" class="mx-3" type="success" plain
-              >Seguir comprando</el-button
-            >
-          </router-link>
+        <v-col class="offset-md-8 col-md-3">
           <router-link to="/checkout">
-            <el-button type="primary" icon="el-icon-wallet"
-              >Generar orden</el-button
-            >
+            <v-btn block color="primary"> Generar orden </v-btn>
+          </router-link>
+        </v-col>
+      </v-row>
+      <v-row v-if="totalItems">
+        <v-col class="offset-md-8 col-md-1">
+          <v-btn block color="danger"> Vaciar </v-btn>
+        </v-col>
+        <v-col class="col-md-2">
+          <router-link to="/">
+            <v-btn block color="success"> Seguir comprando </v-btn>
           </router-link>
         </v-col>
       </v-row>
@@ -128,5 +130,9 @@ export default {
 .el-icon-wallet,
 .el-icon-sell {
   font-size: 3em;
+}
+
+.router-link-active {
+  text-decoration: none !important;
 }
 </style>
