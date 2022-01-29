@@ -1,7 +1,7 @@
 <template>
   <section class="cart">
     <v-container fluid>
-      <v-row>
+      <v-row justify="space-around">
         <v-col class="text-center" cols="12" sm="6">
           <h1>Carrito</h1>
         </v-col>
@@ -77,7 +77,7 @@
       </v-row>
       <v-row v-if="totalItems">
         <v-col class="offset-md-8 col-md-1">
-          <v-btn block color="danger"> Vaciar </v-btn>
+          <v-btn block color="danger" @click="clearCart"> Vaciar </v-btn>
         </v-col>
         <v-col class="col-md-2">
           <router-link to="/">
@@ -113,11 +113,11 @@ export default {
     removeProduct(item) {
       this.$store.dispatch("removeProductFromCart", item.id);
     },
+    clearCart() {
+      this.$store.dispatch("clearCart");
+    },
   },
 };
-
-//this.$store.dispatch("removeProductFromCart", item.id);
-//this.$store.dispatch("clearCart");
 </script>
 
 <style lang="scss" scoped>
