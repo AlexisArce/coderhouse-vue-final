@@ -122,7 +122,9 @@ export default {
 .el-icon-delete {
   font-size: 1.5em !important;
 }
-
+.el-input-number {
+  width: 100px !important;
+}
 .el-icon-wallet,
 .el-icon-sell {
   font-size: 3em;
