@@ -2,6 +2,7 @@
 .el-button,
 .el-tag,
 .el-tooltip__popper,
+.el-message-box,
 .el-popconfirm {
   font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", "微软雅黑", Arial, sans-serif !important;

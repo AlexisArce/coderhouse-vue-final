@@ -1,6 +1,11 @@
 <template>
   <section class="cart">
     <v-container fluid>
+      <v-row>
+        <v-col>
+          <el-page-header @back="goBack" content=""> </el-page-header>
+        </v-col>
+      </v-row>
       <v-row justify="space-around">
         <v-col class="text-center" cols="12" sm="6">
           <h1>Carrito</h1>
@@ -74,14 +79,14 @@
           <strong>Total: $ {{ totalAmount }}</strong>
         </v-col>
       </v-row>
-      <v-row v-if="totalItems">
+      <v-row v-if="totalItems && !loading">
         <v-col class="offset-md-8 col-md-3">
-          <router-link to="/checkout">
-            <v-btn block color="primary"> Generar orden </v-btn>
-          </router-link>
+          <v-btn block color="primary" @click="generateOrder">
+            Generar orden
+          </v-btn>
         </v-col>
       </v-row>
-      <v-row v-if="totalItems">
+      <v-row v-if="totalItems && !loading">
         <v-col class="offset-md-8 col-md-1">
           <v-btn block color="danger" @click="clearCart"> Vaciar </v-btn>
         </v-col>
@@ -91,17 +96,27 @@
           </router-link>
         </v-col>
       </v-row>
+      <v-row>
+        <v-col v-if="loading" class="text-center">
+          <Spinner class="m-5" message="" />
+        </v-col>
+      </v-row>
     </v-container>
   </section>
 </template>
 
 <script>
+import axios from "axios";
+import Spinner from "./Spinner";
+
 export default {
   name: "cart",
-  components: {},
+  components: { Spinner },
   props: [],
   data() {
-    return {};
+    return {
+      loading: false,
+    };
   },
   computed: {
     cart() {
@@ -124,6 +139,29 @@ export default {
     },
     clearCart() {
       this.$store.dispatch("clearCart");
+    },
+    generateOrder() {
+      this.loading = true;
+      axios
+        .post("https://61ba455648df2f0017e5aa20.mockapi.io/Carts", this.cart)
+        .then((data) => {
+          this.clearCart();
+          this.$alert(
+            `La orden de compra # ${data.data.id} fue generada correctamente!`,
+            "Orden enviada",
+            {
+              confirmButtonText: "OK",
+              type: "success",
+              center: true,
+            }
+          );
+        })
+        .finally(() => {
+          this.loading = false;
+        });
+    },
+    goBack() {
+      this.$router.push({ name: "Home" });
     },
   },
 };
