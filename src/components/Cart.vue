@@ -116,6 +116,7 @@ export default {
   data() {
     return {
       loading: false,
+      generatedOrder: false,
     };
   },
   computed: {
@@ -141,18 +142,30 @@ export default {
       this.$store.dispatch("clearCart");
     },
     generateOrder() {
+      let order = { ...this.cart };
+      order.buyer = {
+        firstname: "Alexis",
+        lastname: "Arce",
+        address: "Copello 1801",
+        phone: "1153135724",
+        email: "arce.alexis@gmail.com",
+      };
+
+      this.sendOrder(order);
+    },
+    sendOrder(order) {
       this.loading = true;
       axios
-        .post("https://61ba455648df2f0017e5aa20.mockapi.io/Carts", this.cart)
+        .post("https://61ba455648df2f0017e5aa20.mockapi.io/Orders", order)
         .then((data) => {
           this.clearCart();
+          this.generatedOrder = true;
           this.$alert(
             `La orden de compra # ${data.data.id} fue generada correctamente!`,
             "Orden enviada",
             {
               confirmButtonText: "OK",
               type: "success",
-              center: true,
             }
           );
         })
