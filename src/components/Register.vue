@@ -2,6 +2,11 @@
   <section class="register">
     <v-container fluid>
       <v-row>
+        <v-col>
+          <el-page-header @back="goBack" content="Registro"> </el-page-header>
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col class="offset-md-3 col-md-6">
           <v-form ref="form" @submit.prevent="submit">
             <v-text-field
@@ -113,7 +118,7 @@ export default {
     },
 
     goBack() {
-      this.$router.go(-1);
+      this.$router.push({ name: "Login" });
     },
   },
 };

@@ -2,6 +2,11 @@
   <section class="login">
     <v-container fluid>
       <v-row>
+        <v-col>
+          <el-page-header @back="goBack" content="Login"> </el-page-header>
+        </v-col>
+      </v-row>
+      <v-row>
         <v-col class="offset-md-3 col-md-6">
           <v-form ref="form" v-model="valid" lazy-validation>
             <v-text-field
@@ -67,6 +72,9 @@ export default {
     },
     register() {
       this.$router.push({ name: "Register" });
+    },
+    goBack() {
+      this.$router.push({ name: "Home" });
     },
   },
 
