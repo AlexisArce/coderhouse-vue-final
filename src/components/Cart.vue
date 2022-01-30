@@ -52,7 +52,7 @@
                       cancel-button-text="No, gracias"
                       icon="el-icon-info"
                       icon-color="red"
-                      title="¿Eliminar el producto?"
+                      title="¿Desea eliminar el producto?"
                       @confirm="removeProduct(item)"
                     >
                       <el-button
