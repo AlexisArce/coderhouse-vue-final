@@ -22,7 +22,7 @@
     },
     data () {
       return {
-        imageUrl: "./assets//delivery.gif"
+        imageUrl: "./assets/delivery.gif"
       }
     },
     methods: {
