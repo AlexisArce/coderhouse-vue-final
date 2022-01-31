@@ -6,22 +6,22 @@
           <el-page-header @back="goBack" content=""> </el-page-header>
         </v-col>
       </v-row>
-      <v-row justify="space-around">
+      <v-row justify="space-around" v-if="!orderWasGenerated">
         <v-col class="text-center" cols="12" sm="6">
           <h1>Carrito</h1>
         </v-col>
       </v-row>
       <v-row>
         <v-col class="offset-md-2 col-md-8">
-          <section v-if="!totalItems">
-            <p v-if="!totalItems">
+          <section v-if="!totalItems && !orderWasGenerated">
+            <p>
               El carrito está vacío :(
               <router-link to="/">
                 <el-button class="mx-3" type="primary">Comprar</el-button>
               </router-link>
             </p>
           </section>
-          <v-simple-table v-else>
+          <v-simple-table v-if="totalItems && !orderWasGenerated">
             <template v-slot:default>
               <thead>
                 <tr>
@@ -101,6 +101,14 @@
           <Spinner class="m-5" message="" />
         </v-col>
       </v-row>
+      <v-row>
+        <v-col>
+          <GeneratedOrder
+            v-if="orderWasGenerated"
+            :order="order"
+          ></GeneratedOrder>
+        </v-col>
+      </v-row>
     </v-container>
   </section>
 </template>
@@ -108,15 +116,17 @@
 <script>
 import axios from "axios";
 import Spinner from "./Spinner";
+import GeneratedOrder from "./GeneratedOrder";
 
 export default {
   name: "cart",
-  components: { Spinner },
+  components: { Spinner, GeneratedOrder },
   props: [],
   data() {
     return {
       loading: false,
-      generatedOrder: false,
+      orderWasGenerated: false,
+      order: {},
     };
   },
   computed: {
@@ -142,8 +152,8 @@ export default {
       this.$store.dispatch("clearCart");
     },
     generateOrder() {
-      let order = { ...this.cart };
-      order.buyer = {
+      this.order = { ...this.cart };
+      this.order.buyer = {
         firstname: "Alexis",
         lastname: "Arce",
         address: "Copello 1801",
@@ -151,21 +161,27 @@ export default {
         email: "arce.alexis@gmail.com",
       };
 
-      this.sendOrder(order);
+      this.sendOrder();
     },
-    sendOrder(order) {
+    sendOrder() {
+      const baseUrl = process.env.VUE_APP_ROOT_API;
       this.loading = true;
+
       axios
-        .post(`${process.env.VUE_APP_ROOT_API}/Orders`, order)
+        .post(`${baseUrl}/Orders`, this.order)
         .then((data) => {
+          const { id } = data.data;
+          this.order.id = id;
+
           this.clearCart();
-          this.generatedOrder = true;
+          this.orderWasGenerated = true;
           this.$alert(
-            `La orden de compra # ${data.data.id} fue generada correctamente!`,
-            "Orden enviada",
+            `La orden de compra #${id} fue generada correctamente!`,
+            "Orden de compra enviada",
             {
               confirmButtonText: "OK",
               type: "success",
+              center: true,
             }
           );
         })

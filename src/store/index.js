@@ -52,6 +52,7 @@ export default new Vuex.Store({
   actions: {
     fetchProducts(context) {
       context.commit("LOADING_PRODUCTS", true);
+
       axios.get(`${process.env.VUE_APP_ROOT_API}/Products`).then((data) => {
         context.commit("PRODUCTS", data.data);
         context.commit("LOADING_PRODUCTS", false);
