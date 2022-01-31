@@ -13,7 +13,11 @@
       </v-row>
       <v-row>
         <v-col class="offset-md-2 col-md-8">
-          <section v-if="!totalItems && !orderWasGenerated">
+          <section
+            v-if="!totalItems && !orderWasGenerated"
+            class="text-center my-10"
+            align="center"
+          >
             <p>
               El carrito está vacío :(
               <router-link to="/">
