@@ -49,6 +49,7 @@
               required
             ></v-text-field>
 
+            <!--
             <div class="my-2">
               <v-label>Número de teléfono</v-label>
               <MazPhoneNumberInput
@@ -67,6 +68,8 @@
                 @update="updatePhone"
               />
             </div>
+            -->
+
             <v-row align="center" justify="space-around" class="my-8">
               <v-btn text @click="goBack" plain> Cancelar </v-btn>
               <v-btn
@@ -88,11 +91,11 @@
 
 <script>
 import axios from "axios";
-import { MazPhoneNumberInput } from "maz-ui";
+//@ts-nocheckimport { MazPhoneNumberInput } from "maz-ui";
 
 export default {
   name: "register",
-  components: { MazPhoneNumberInput },
+  //components: { MazPhoneNumberInput },
   data() {
     const defaultForm = Object.freeze({
       firstname: "",
@@ -130,9 +133,9 @@ export default {
         this.form.lastname &&
         this.form.email &&
         this.form.password &&
-        this.form.address &&
-        this.form.phone &&
-        this.phoneIsValid
+        this.form.address //&&
+        //this.form.phone &&
+        //this.phoneIsValid
       );
     },
   },
@@ -143,9 +146,11 @@ export default {
       this.$refs.form.reset();
     },
 
+    /*
     updatePhone(event) {
       this.phoneIsValid = event.isValid;
     },
+    */
 
     submit() {
       axios
