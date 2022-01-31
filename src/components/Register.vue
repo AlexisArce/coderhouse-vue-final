@@ -26,6 +26,13 @@
             ></v-text-field>
 
             <v-text-field
+              v-model="form.phone"
+              :rules="rules.phone"
+              label="Teléfono"
+              required
+            ></v-text-field>
+
+            <v-text-field
               v-model="form.address"
               color="blue darken-2"
               label="Dirección"
@@ -49,27 +56,6 @@
               required
             ></v-text-field>
 
-            <!--
-            <div class="my-2">
-              <v-label>Número de teléfono</v-label>
-              <MazPhoneNumberInput
-                class="my-2"
-                required="true"
-                default-country-code="AR"
-                v-model="form.phone"
-                :translations="{
-                  countrySelectorLabel: 'Código país',
-                  countrySelectorError: '',
-                  phoneNumberLabel: 'Número de teléfono',
-                  example: 'Ejemplo :',
-                }"
-                :onlyCountries="['AR']"
-                noSearch="true"
-                @update="updatePhone"
-              />
-            </div>
-            -->
-
             <v-row align="center" justify="space-around" class="my-8">
               <v-btn text @click="goBack" plain> Cancelar </v-btn>
               <v-btn
@@ -91,11 +77,9 @@
 
 <script>
 import axios from "axios";
-//@ts-nocheckimport { MazPhoneNumberInput } from "maz-ui";
 
 export default {
   name: "register",
-  //components: { MazPhoneNumberInput },
   data() {
     const defaultForm = Object.freeze({
       firstname: "",
@@ -121,6 +105,14 @@ export default {
           (v) => /.+@.+\..+/.test(v) || "Debe ingresar un e-mail válido",
         ],
         password: [(v) => !!v || "Debe ingresar la contraseña"],
+        phone: [
+          (val) =>
+            (val || "").length > 0 || "Debe ingresar un número de teléfono",
+          (v) =>
+            /^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/.test(
+              v
+            ) || "Debe ingresar un número de teléfono válido",
+        ],
       },
       defaultForm,
     };
@@ -133,9 +125,8 @@ export default {
         this.form.lastname &&
         this.form.email &&
         this.form.password &&
-        this.form.address //&&
-        //this.form.phone &&
-        //this.phoneIsValid
+        this.form.address &&
+        this.form.phone
       );
     },
   },
@@ -145,12 +136,6 @@ export default {
       this.form = Object.assign({}, this.defaultForm);
       this.$refs.form.reset();
     },
-
-    /*
-    updatePhone(event) {
-      this.phoneIsValid = event.isValid;
-    },
-    */
 
     submit() {
       axios
