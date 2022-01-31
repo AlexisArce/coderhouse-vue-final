@@ -32,15 +32,6 @@
               required
             ></v-text-field>
 
-            <!--
-            <v-text-field
-              v-model="form.phone"
-              color="blue darken-2"
-              label="Teléfono"
-              required
-            ></v-text-field>
-            -->
-
             <v-text-field
               v-model="form.email"
               :rules="rules.email"
