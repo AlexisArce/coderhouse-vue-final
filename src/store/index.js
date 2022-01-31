@@ -13,6 +13,8 @@ export default new Vuex.Store({
     },
     products: [],
     loadingProducts: false,
+    isAdmin: false,
+    isAuthenticated: false,
   },
   mutations: {
     PRODUCTS(state, payload) {
@@ -50,12 +52,10 @@ export default new Vuex.Store({
   actions: {
     fetchProducts(context) {
       context.commit("LOADING_PRODUCTS", true);
-      axios
-        .get("https://61ba455648df2f0017e5aa20.mockapi.io/Products")
-        .then((data) => {
-          context.commit("PRODUCTS", data.data);
-          context.commit("LOADING_PRODUCTS", false);
-        });
+      axios.get(`${process.env.VUE_APP_ROOT_API}/Products`).then((data) => {
+        context.commit("PRODUCTS", data.data);
+        context.commit("LOADING_PRODUCTS", false);
+      });
     },
     addProductToCart(context, payload) {
       context.commit("ADD_PRODUCT_TO_CART", payload);
@@ -88,6 +88,12 @@ export default new Vuex.Store({
     },
     loadingProducts: (state) => {
       return state.loadingProducts;
+    },
+    isAdmin: (state) => {
+      return state.isAdmin;
+    },
+    isAuthenticated: (state) => {
+      return state.isAuthenticated;
     },
   },
   modules: {},

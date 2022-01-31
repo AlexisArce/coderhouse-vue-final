@@ -156,7 +156,7 @@ export default {
     sendOrder(order) {
       this.loading = true;
       axios
-        .post("https://61ba455648df2f0017e5aa20.mockapi.io/Orders", order)
+        .post(`${process.env.VUE_APP_ROOT_API}/Orders`, order)
         .then((data) => {
           this.clearCart();
           this.generatedOrder = true;
