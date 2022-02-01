@@ -121,8 +121,17 @@
       width="80%"
       center
     >
-      <!--<OrderSteps />-->
-      <Register :createAccount="false" />
+      <Register
+        :createAccount="false"
+        :modal="true"
+        :form="order.buyer"
+        ref="userForm"
+      />
+
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="centerDialogVisible = false">Cancelar</el-button>
+        <el-button type="primary" @click="sendOrder">Confirm</el-button>
+      </span>
     </el-dialog>
   </section>
 </template>
@@ -131,7 +140,6 @@
 import axios from "axios";
 import Spinner from "./Spinner";
 import GeneratedOrder from "./GeneratedOrder";
-//import OrderSteps from "./OrderSteps";
 import Register from "./Register";
 
 export default {
@@ -139,11 +147,22 @@ export default {
   components: { Spinner, GeneratedOrder, Register },
   props: [],
   data() {
+    const defaultForm = Object.freeze({
+      firstname: "",
+      lastname: "",
+      address: "",
+      phone: "",
+      email: "",
+      password: "",
+    });
+
     return {
       loading: false,
       orderWasGenerated: false,
       centerDialogVisible: false,
-      order: {},
+      order: {
+        buyer: Object.assign({}, defaultForm),
+      },
       e1: 1,
     };
   },
@@ -170,23 +189,31 @@ export default {
       this.$store.dispatch("clearCart");
     },
     generateOrder() {
-      this.centerDialogVisible = true;
-      /*
-      this.order = { ...this.cart };
-      this.order.buyer = {
-        firstname: "Alexis",
-        lastname: "Arce",
-        address: "Copello 1801",
-        phone: "1153135724",
-        email: "arce.alexis@gmail.com",
-      };
-
-      this.sendOrder();
-      */
+      if (this.$store.getters.isAuthenticated) {
+        this.order.buyer = this.$store.getters.authenticatedUser;
+        this.sendOrder();
+      } else {
+        this.centerDialogVisible = true;
+      }
+    },
+    loadOrderData() {
+      this.order = { ...this.order, ...this.cart };
+      this.order.totalAmount = this.totalAmount;
+      this.order.totalItems = this.totalItems;
     },
     sendOrder() {
+      if (this.centerDialogVisible && !this.$refs.userForm.formIsValid) {
+        this.$refs.userForm.validate();
+        return;
+      }
+
+      if (this.centerDialogVisible && this.$refs.userForm.formIsValid) {
+        this.centerDialogVisible = false;
+      }
+
       const baseUrl = process.env.VUE_APP_ROOT_API;
       this.loading = true;
+      this.loadOrderData();
 
       axios
         .post(`${baseUrl}/Orders`, this.order)

@@ -13,7 +13,7 @@
       <router-link to="/login">
         <el-avatar :size="30" :src="circleUrl"></el-avatar>
       </router-link>
-      <router-link to="/cart">
+      <router-link v-if="!isAdmin" to="/cart">
         <el-badge :value="cartProductsCount" :max="10" class="item ms-4">
           <i class="el-icon-shopping-cart-2"></i>
         </el-badge>
@@ -40,6 +40,9 @@
     computed: {
       cartProductsCount(){
         return this.$store.getters.totalItems;
+      },
+      isAdmin(){
+        return this.$store.getters.isAdmin;
       }
     }
 }

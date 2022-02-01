@@ -15,6 +15,7 @@ export default new Vuex.Store({
     loadingProducts: false,
     isAdmin: false,
     isAuthenticated: false,
+    authenticatedUser: {},
   },
   mutations: {
     PRODUCTS(state, payload) {
@@ -95,6 +96,9 @@ export default new Vuex.Store({
     },
     isAuthenticated: (state) => {
       return state.isAuthenticated;
+    },
+    authenticatedUser: (state) => {
+      return state.authenticatedUser;
     },
   },
   modules: {},

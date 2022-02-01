@@ -2,7 +2,9 @@
   <section class="register">
     <v-container fluid>
       <v-row>
-        <v-col class="offset-md-3 col-md-6">
+        <v-col
+          :class="[modal ? 'offset-md-1 col-md-10' : 'offset-md-3 col-md-6']"
+        >
           <v-form ref="form" @submit.prevent="submit">
             <v-text-field
               v-model="form.firstname"
@@ -29,6 +31,7 @@
 
             <v-text-field
               v-model="form.address"
+              :rules="rules.address"
               color="blue darken-2"
               label="Dirección"
               required
@@ -81,26 +84,19 @@ import axios from "axios";
 
 export default {
   name: "register",
-  props: ["createAccount"],
+  props: ["createAccount", "modal", "form"],
   data() {
-    const defaultForm = Object.freeze({
-      firstname: "",
-      lastname: "",
-      address: "",
-      phone: "",
-      email: "",
-      password: "",
-    });
-
     return {
       phoneIsValid: false,
-      form: Object.assign({}, defaultForm),
       rules: {
         firstname: [
           (val) => (val || "").length > 0 || "Debe ingresar su nombre",
         ],
         lastname: [
           (val) => (val || "").length > 0 || "Debe ingresar su apellido",
+        ],
+        address: [
+          (val) => (val || "").length > 0 || "Debe ingresar su domicilio",
         ],
         email: [
           (v) => !!v || "Debe ingresar un e-mail válido",
@@ -116,7 +112,6 @@ export default {
             ) || "Debe ingresar un número de teléfono válido",
         ],
       },
-      defaultForm,
     };
   },
 
@@ -126,7 +121,7 @@ export default {
         this.form.firstname &&
         this.form.lastname &&
         this.form.email &&
-        (this.form.password || !this.props.createAccount) &&
+        (this.form.password || !this.props?.createAccount) &&
         this.form.address &&
         this.form.phone
       );
@@ -139,10 +134,16 @@ export default {
       this.$refs.form.reset();
     },
 
+    validate() {
+      return this.$refs.form.validate();
+    },
+
     submit() {
       if (this.props.createAccount) {
+        const baseUrl = process.env.VUE_APP_ROOT_API;
+
         axios
-          .post("https://61ba455648df2f0017e5aa20.mockapi.io/Users", this.form)
+          .post(`${baseUrl}/Users`, this.form)
           .then(() => {
             this.resetForm();
           })

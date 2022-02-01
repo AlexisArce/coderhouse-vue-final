@@ -3,7 +3,7 @@
     <v-row>
       <v-col>
         <el-page-header @back="goBack" content="Registro"> </el-page-header>
-        <register :createAccount="true" />
+        <register :createAccount="true" :modal="false" :form="user" />
       </v-col>
     </v-row>
   </v-container>
@@ -18,7 +18,18 @@ export default {
     Register,
   },
   data() {
-    return {};
+    const defaultForm = Object.freeze({
+      firstname: "",
+      lastname: "",
+      address: "",
+      phone: "",
+      email: "",
+      password: "",
+    });
+
+    return {
+      user: Object.assign({}, defaultForm),
+    };
   },
   methods: {
     goBack() {
