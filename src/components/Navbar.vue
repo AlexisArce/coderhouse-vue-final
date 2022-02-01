@@ -9,6 +9,16 @@
           contain
         ></v-img>
       </router-link>
+      <router-link
+        v-if="isAdmin"
+        to="/administration/products"
+        class="me-5 ms-10"
+      >
+        <span class="item-navbar">Productos</span>
+      </router-link>
+      <router-link v-if="isAdmin" to="/administration/orders" class="mx-5">
+        <span class="item-navbar">Pedidos</span>
+      </router-link>
       <v-spacer></v-spacer>
       <router-link to="/login">
         <el-avatar :size="30" :src="circleUrl"></el-avatar>
@@ -54,6 +64,10 @@
 }
 .el-icon-shopping-cart-2 {
   font-size: 28px;
+  color: white;
+}
+
+.item-navbar {
   color: white;
 }
 </style>

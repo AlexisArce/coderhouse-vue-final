@@ -37,9 +37,15 @@ const routes = [
     meta: { guest: true },
   },
   {
-    path: "/administration",
-    name: "Administration",
-    component: () => import("../views/Administration"),
+    path: "/administration/products",
+    name: "products",
+    component: () => import("../views/Products"),
+    meta: { requiresAuth: true },
+  },
+  {
+    path: "/administration/orders",
+    name: "orders",
+    component: () => import("../views/Orders"),
     meta: { requiresAuth: true },
   },
 ];
@@ -57,6 +63,18 @@ router.beforeEach((to, from, next) => {
       return;
     }
     next("/login");
+  } else {
+    next();
+  }
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.guest)) {
+    if (store.getters.isAuthenticated && store.getters.isAdmin) {
+      next("/administration/orders");
+      return;
+    }
+    next();
   } else {
     next();
   }
