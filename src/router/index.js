@@ -21,7 +21,7 @@ const routes = [
   {
     path: "/register",
     name: "Register",
-    component: () => import("../components/Register"),
+    component: () => import("../views/Register"),
     meta: { guest: true },
   },
   {

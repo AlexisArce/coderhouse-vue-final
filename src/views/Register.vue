@@ -2,27 +2,27 @@
   <v-container fluid>
     <v-row>
       <v-col>
-        <el-page-header @back="goBack" content="Login"> </el-page-header>
-        <login />
+        <el-page-header @back="goBack" content="Registro"> </el-page-header>
+        <register />
       </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
-import Login from "../components/Login";
+import Register from "../components/Register";
 
 export default {
-  name: "LoginView",
+  name: "RegisterView",
   components: {
-    Login,
+    Register,
   },
   data() {
     return {};
   },
   methods: {
     goBack() {
-      this.$router.push({ name: "Home" });
+      this.$router.push({ name: "Login" });
     },
   },
 };
