@@ -1,7 +1,7 @@
 <template>
   <section class="register">
     <v-container fluid>
-      <v-row>
+      <v-row v-if="!userWasCreated">
         <v-col
           :class="[modal ? 'offset-md-1 col-md-10' : 'offset-md-3 col-md-6']"
         >
@@ -75,6 +75,14 @@
           </v-form>
         </v-col>
       </v-row>
+      <v-row v-if="userWasCreated">
+        <v-col class="offset-md-3 col-md-6">
+          <v-alert dense text type="success">
+            Usuario registrado correctamente!
+          </v-alert>
+          <router-link to="/login"> Ir al login </router-link>
+        </v-col>
+      </v-row>
     </v-container>
   </section>
 </template>
@@ -88,6 +96,7 @@ export default {
   data() {
     return {
       phoneIsValid: false,
+      userWasCreated: false,
       rules: {
         firstname: [
           (val) => (val || "").length > 0 || "Debe ingresar su nombre",
@@ -145,7 +154,8 @@ export default {
         axios
           .post(`${baseUrl}/Users`, this.form)
           .then(() => {
-            this.resetForm();
+            this.userWasCreated = true;
+            //this.resetForm();
           })
           .catch(function () {});
       }
