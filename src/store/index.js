@@ -6,16 +6,13 @@ import { roundTwoDecimals } from "../helpers/functions";
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const productsModule = {
   state: {
     cart: {
       products: [],
     },
     products: [],
     loadingProducts: false,
-    isAdmin: false,
-    isAuthenticated: false,
-    authenticatedUser: {},
   },
   mutations: {
     PRODUCTS(state, payload) {
@@ -91,6 +88,18 @@ export default new Vuex.Store({
     loadingProducts: (state) => {
       return state.loadingProducts;
     },
+  },
+};
+
+const usersModule = {
+  state: {
+    isAdmin: false,
+    isAuthenticated: false,
+    authenticatedUser: {},
+  },
+  mutations: {},
+  actions: {},
+  getters: {
     isAdmin: (state) => {
       return state.isAdmin;
     },
@@ -101,5 +110,11 @@ export default new Vuex.Store({
       return state.authenticatedUser;
     },
   },
-  modules: {},
+};
+
+export default new Vuex.Store({
+  modules: {
+    products: productsModule,
+    users: usersModule,
+  },
 });

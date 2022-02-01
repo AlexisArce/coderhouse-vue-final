@@ -55,6 +55,12 @@
               required
             ></v-text-field>
 
+            <v-checkbox
+              v-if="createAccount"
+              v-model="form.isAdmin"
+              label="¿Es administrador?"
+            ></v-checkbox>
+
             <v-row
               align="center"
               justify="space-around"

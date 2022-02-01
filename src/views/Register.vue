@@ -25,6 +25,7 @@ export default {
       phone: "",
       email: "",
       password: "",
+      isAdmin: false,
     });
 
     return {
