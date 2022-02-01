@@ -129,7 +129,7 @@
       />
 
       <span slot="footer" class="dialog-footer">
-        <el-button @click="centerDialogVisible = false">Cancelar</el-button>
+        <el-button @click="closeModal">Cancelar</el-button>
         <el-button type="primary" @click="sendOrder">Confirm</el-button>
       </span>
     </el-dialog>
@@ -239,6 +239,10 @@ export default {
     },
     goBack() {
       this.$router.push({ name: "Home" });
+    },
+    closeModal() {
+      this.$refs.userForm.resetForm();
+      this.centerDialogVisible = false;
     },
   },
 };

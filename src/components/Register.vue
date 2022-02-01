@@ -139,7 +139,7 @@ export default {
     },
 
     submit() {
-      if (this.props.createAccount) {
+      if (this.createAccount) {
         const baseUrl = process.env.VUE_APP_ROOT_API;
 
         axios
