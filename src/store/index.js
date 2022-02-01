@@ -97,8 +97,18 @@ const usersModule = {
     isAuthenticated: false,
     authenticatedUser: {},
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    USER_AUTHENTICATED(state, payload) {
+      state.authenticatedUser = payload;
+      state.isAuthenticated = true;
+      state.isAdmin = payload.isAdmin;
+    },
+  },
+  actions: {
+    addUser(context, payload) {
+      context.commit("USER_AUTHENTICATED", payload);
+    },
+  },
   getters: {
     isAdmin: (state) => {
       return state.isAdmin;

@@ -78,10 +78,12 @@ export default {
       const baseUrl = process.env.VUE_APP_ROOT_API;
       const users = await axios(`${baseUrl}/Users`);
 
-      const found = users.data.find(
+      const userFound = users.data.find(
         (u) => u.email === this.email && u.password === this.password
       );
-      if (found) {
+
+      if (userFound) {
+        this.$store.dispatch("addUser", userFound);
         this.$router.push({ name: "Home" });
       } else {
         this.userNotFound = true;
