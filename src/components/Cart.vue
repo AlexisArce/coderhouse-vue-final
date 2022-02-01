@@ -130,7 +130,7 @@
 
       <span slot="footer" class="dialog-footer">
         <el-button @click="closeModal">Cancelar</el-button>
-        <el-button type="primary" @click="sendOrder">Confirm</el-button>
+        <el-button type="primary" @click="sendOrder">Confirmar orden</el-button>
       </span>
     </el-dialog>
   </section>
