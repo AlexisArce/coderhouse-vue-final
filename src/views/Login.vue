@@ -3,7 +3,7 @@
     <v-row>
       <v-col>
         <el-page-header @back="goBack" content="Login"> </el-page-header>
-        <login />
+        <login :showRegisterButton="true" />
       </v-col>
     </v-row>
   </v-container>

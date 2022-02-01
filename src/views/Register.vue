@@ -3,7 +3,7 @@
     <v-row>
       <v-col>
         <el-page-header @back="goBack" content="Registro"> </el-page-header>
-        <register />
+        <register :createAccount="true" />
       </v-col>
     </v-row>
   </v-container>

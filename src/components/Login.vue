@@ -28,7 +28,13 @@
             >
               Ingresar
             </v-btn>
-            <v-btn outlined color="indigo" @click="register" block>
+            <v-btn
+              outlined
+              color="indigo"
+              v-if="showRegisterButton"
+              @click="register"
+              block
+            >
               Registrar
             </v-btn>
           </v-form>
@@ -42,7 +48,7 @@
 export default {
   name: "login",
   components: {},
-  props: [],
+  props: ["showRegisterButton"],
   data: () => ({
     valid: true,
     email: "",

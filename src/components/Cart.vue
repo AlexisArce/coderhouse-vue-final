@@ -114,6 +114,16 @@
         </v-col>
       </v-row>
     </v-container>
+
+    <el-dialog
+      title="Generar orden"
+      :visible.sync="centerDialogVisible"
+      width="80%"
+      center
+    >
+      <!--<OrderSteps />-->
+      <Register :createAccount="false" />
+    </el-dialog>
   </section>
 </template>
 
@@ -121,16 +131,20 @@
 import axios from "axios";
 import Spinner from "./Spinner";
 import GeneratedOrder from "./GeneratedOrder";
+//import OrderSteps from "./OrderSteps";
+import Register from "./Register";
 
 export default {
   name: "cart",
-  components: { Spinner, GeneratedOrder },
+  components: { Spinner, GeneratedOrder, Register },
   props: [],
   data() {
     return {
       loading: false,
       orderWasGenerated: false,
+      centerDialogVisible: false,
       order: {},
+      e1: 1,
     };
   },
   computed: {
@@ -156,6 +170,8 @@ export default {
       this.$store.dispatch("clearCart");
     },
     generateOrder() {
+      this.centerDialogVisible = true;
+      /*
       this.order = { ...this.cart };
       this.order.buyer = {
         firstname: "Alexis",
@@ -166,6 +182,7 @@ export default {
       };
 
       this.sendOrder();
+      */
     },
     sendOrder() {
       const baseUrl = process.env.VUE_APP_ROOT_API;

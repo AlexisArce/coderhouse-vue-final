@@ -43,6 +43,7 @@
             ></v-text-field>
 
             <v-text-field
+              v-if="createAccount"
               v-model="form.password"
               :rules="rules.password"
               color="blue darken-2"
@@ -51,7 +52,12 @@
               required
             ></v-text-field>
 
-            <v-row align="center" justify="space-around" class="my-8">
+            <v-row
+              align="center"
+              justify="space-around"
+              class="my-8"
+              v-if="createAccount"
+            >
               <v-btn text @click="goBack" plain> Cancelar </v-btn>
               <v-btn
                 :disabled="!formIsValid"
@@ -75,6 +81,7 @@ import axios from "axios";
 
 export default {
   name: "register",
+  props: ["createAccount"],
   data() {
     const defaultForm = Object.freeze({
       firstname: "",
@@ -119,7 +126,7 @@ export default {
         this.form.firstname &&
         this.form.lastname &&
         this.form.email &&
-        this.form.password &&
+        (this.form.password || !this.props.createAccount) &&
         this.form.address &&
         this.form.phone
       );
@@ -133,12 +140,18 @@ export default {
     },
 
     submit() {
-      axios
-        .post("https://61ba455648df2f0017e5aa20.mockapi.io/Users", this.form)
-        .then(() => {
-          this.resetForm();
-        })
-        .catch(function () {});
+      if (this.props.createAccount) {
+        axios
+          .post("https://61ba455648df2f0017e5aa20.mockapi.io/Users", this.form)
+          .then(() => {
+            this.resetForm();
+          })
+          .catch(function () {});
+      }
+    },
+
+    goBack() {
+      this.$router.push({ name: "Login" });
     },
   },
 };
