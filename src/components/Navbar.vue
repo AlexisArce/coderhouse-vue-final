@@ -18,7 +18,7 @@
         <span class="item-navbar">Productos</span>
       </router-link>
 
-      <router-link v-if="isAdmin" to="/administration/orders" class="mx-5">
+      <router-link v-if="isAdmin" to="/administration/orders" class="me-5">
         <span class="item-navbar">Pedidos</span>
       </router-link>
 

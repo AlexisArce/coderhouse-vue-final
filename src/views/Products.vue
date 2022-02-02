@@ -1,17 +1,9 @@
 <template>
   <section class="products">
     <Navbar />
-    <v-container fluid v-if="isAdmin">
-      <v-row justify="space-around">
-        <v-col>
-          <p>Productos</p>
-          <ProductsCRUD />
-        </v-col>
-      </v-row>
-      <v-row justify="center">
-        <v-col> <app-title /></v-col>
-      </v-row>
-    </v-container>
+
+    <ProductsCRUD v-if="isAdmin" />
+
     <div v-else class="m-5">
       <p>No cuenta con los permisos para ver esta página :(</p>
     </div>
