@@ -84,7 +84,8 @@ export default {
 
       if (userFound) {
         this.$store.dispatch("addUser", userFound);
-        this.$router.push({ name: "Home" });
+        const route = userFound.isAdmin ? "Orders" : "Home";
+        this.$router.push({ name: route });
       } else {
         this.userNotFound = true;
       }

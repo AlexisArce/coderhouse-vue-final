@@ -38,13 +38,13 @@ const routes = [
   },
   {
     path: "/administration/products",
-    name: "products",
+    name: "Products",
     component: () => import("../views/Products"),
     meta: { requiresAuth: true },
   },
   {
     path: "/administration/orders",
-    name: "orders",
+    name: "Orders",
     component: () => import("../views/Orders"),
     meta: { requiresAuth: true },
   },

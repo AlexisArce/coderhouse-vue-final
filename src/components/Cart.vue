@@ -164,7 +164,6 @@ export default {
       order: {
         buyer: Object.assign({}, defaultForm),
       },
-      e1: 1,
     };
   },
   computed: {
