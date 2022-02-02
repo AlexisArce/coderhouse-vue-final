@@ -69,6 +69,7 @@
     methods: {
       logout(){
         this.$store.dispatch("logout");
+        this.$router.push({ name: "Home" });
       }
     },
     computed: {
