@@ -4,6 +4,9 @@
 
 https://coderhouse-vue-final-6vi35.ondigitalocean.app/
 
+#### La creación de cuenta es opcional, es decir el usuario puede generar una orden sin la necesidad de tener que crear una cuenta o loguearse.
+#### La ventaja que tendrá el usuario registrado es que no deberá ingresar los datos nuevamente cuando realice otro pedido.
+
 ## Usuario admin ya creado
 
 #### email: admin@gmail.com
