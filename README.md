@@ -14,6 +14,13 @@ Tienda online de una empresa ficticia de venta de pizzas.  https://coderhouse-vu
 
 De todas formas se pueden crear usuarios cliente y administrados
 
+## Librerías externas
+
+- axios: Para realizar llamadas asincrónicas. https://github.com/axios/axios
+- vuetify: Para estilos y grid system. http://vuetifyjs.com/
+- element-ui: Facilita el uso de algunos componentes https://element.eleme.io/
+
+Se utiliza https://mockapi.io/ como backend
 
 ## Project setup
 ```
