@@ -152,6 +152,18 @@ export default {
 
     deleteItemConfirm() {
       this.products.splice(this.editedIndex, 1);
+      const baseUrl = process.env.VUE_APP_ROOT_API;
+
+      axios
+        .delete(`${baseUrl}/Products/${this.editedItem.id}`)
+        .then(function () {
+          Notification.success({
+            title: "Producto eliminado",
+            message: "El producto fue eliminado del menú",
+          });
+          this.initialize();
+        })
+        .catch(function () {});
       this.closeDelete();
     },
 
@@ -175,19 +187,31 @@ export default {
     save() {
       if (!this.$refs.productForm.validate()) return;
 
+      const baseUrl = process.env.VUE_APP_ROOT_API;
+
       if (this.editedIndex > -1) {
         Object.assign(this.products[this.editedIndex], this.editedItem);
+        axios
+          .put(`${baseUrl}/Products/${this.editedItem.id}`, this.editedItem)
+          .then(function () {
+            Notification.success({
+              title: "Producto actualizado",
+              message: "El producto fue actualizado en el menú",
+            });
+            this.initialize();
+          })
+          .catch(function () {});
       } else {
         this.products.push(this.editedItem);
-        const baseUrl = process.env.VUE_APP_ROOT_API;
+
         axios
           .post(`${baseUrl}/Products`, this.editedItem)
           .then(function () {
-            this.initialize();
             Notification.success({
               title: "Producto creado",
               message: "El nuevo producto fue agregado al menú",
             });
+            this.initialize();
           })
           .catch(function () {});
       }
