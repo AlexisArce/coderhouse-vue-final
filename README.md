@@ -12,7 +12,7 @@ Tienda online de una empresa ficticia de venta de pizzas.  https://coderhouse-vu
 #### email: admin@gmail.com
 #### pass: admin
 
-De todas formas se pueden crear usuarios cliente y administrados
+De todas formas se pueden crear usuarios cliente y administrador
 
 ## Librerías externas
 
