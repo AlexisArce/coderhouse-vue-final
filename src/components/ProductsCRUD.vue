@@ -9,6 +9,10 @@
       class="elevation-1"
       loading-text="Cargando la información..."
     >
+      <template v-slot:item.isVeggie="{ item }">
+        <v-chip :color="chipColor(item)" dark> {{ chipText(item) }} </v-chip>
+      </template>
+
       <template v-slot:top>
         <v-toolbar flat>
           <v-text-field
@@ -151,6 +155,14 @@ export default {
         this.products.push(this.editedItem);
       }
       this.close();
+    },
+
+    chipColor(item) {
+      return item.isVeggie ? "green" : "gray";
+    },
+
+    chipText(item) {
+      return item.isVeggie ? "Sí" : "No";
     },
   },
 
