@@ -1,5 +1,17 @@
 # coderhouse-vue-final
 
+## Link
+
+https://coderhouse-vue-final-6vi35.ondigitalocean.app/
+
+## Usuario admin ya creado
+
+#### email: admin@gmail.com
+#### pass: admin
+
+De todas formas se pueden crear usuarios cliente y administrados
+
+
 ## Project setup
 ```
 npm install
