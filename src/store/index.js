@@ -103,10 +103,18 @@ const usersModule = {
       state.isAuthenticated = true;
       state.isAdmin = payload.isAdmin;
     },
+    LOGOUT(state) {
+      state.isAdmin = false;
+      state.isAuthenticated = false;
+      state.authenticatedUser = null;
+    },
   },
   actions: {
     addUser(context, payload) {
       context.commit("USER_AUTHENTICATED", payload);
+    },
+    logout(context) {
+      context.commit("LOGOUT");
     },
   },
   getters: {

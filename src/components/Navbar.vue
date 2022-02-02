@@ -9,6 +9,7 @@
           contain
         ></v-img>
       </router-link>
+
       <router-link
         v-if="isAdmin"
         to="/administration/products"
@@ -16,13 +17,33 @@
       >
         <span class="item-navbar">Productos</span>
       </router-link>
+
       <router-link v-if="isAdmin" to="/administration/orders" class="mx-5">
         <span class="item-navbar">Pedidos</span>
       </router-link>
+
       <v-spacer></v-spacer>
-      <router-link to="/login">
+
+      <router-link to="/login" v-if="!isAuthenticated">
         <el-avatar :size="30" :src="circleUrl"></el-avatar>
       </router-link>
+
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-icon
+            medium
+            color="white"
+            v-if="isAuthenticated"
+            v-bind="attrs"
+            v-on="on"
+            @click="logout"
+          >
+            mdi-logout
+          </v-icon>
+        </template>
+        <span>Cerrar sesión</span>
+      </v-tooltip>
+
       <router-link v-if="!isAdmin" to="/cart">
         <el-badge :value="cartProductsCount" :max="10" class="item ms-4">
           <i class="el-icon-shopping-cart-2"></i>
@@ -46,6 +67,9 @@
       }
     },
     methods: {
+      logout(){
+        this.$store.dispatch("logout");
+      }
     },
     computed: {
       cartProductsCount(){
@@ -53,6 +77,9 @@
       },
       isAdmin(){
         return this.$store.getters.isAdmin;
+      },
+      isAuthenticated(){
+        return this.$store.getters.isAuthenticated;
       }
     }
 }
