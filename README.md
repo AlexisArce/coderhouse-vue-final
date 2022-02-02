@@ -6,8 +6,8 @@ https://coderhouse-vue-final-6vi35.ondigitalocean.app/
 
 ## Usuarios admin ya creado
 
-admin@gmail.com
-admin
+### email: admin@gmail.com
+### pass: admin
 
 De todas formas se pueden crear usuarios cliente y administrados
 
