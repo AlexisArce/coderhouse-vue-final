@@ -4,7 +4,7 @@
 
 https://coderhouse-vue-final-6vi35.ondigitalocean.app/
 
-## Usuarios admin ya creado
+## Usuario admin ya creado
 
 #### email: admin@gmail.com
 #### pass: admin
