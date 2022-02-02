@@ -20,6 +20,7 @@
                 <th class="text-left">Cliente</th>
                 <th class="text-left">Teléfono</th>
                 <th class="text-left">Dirección</th>
+                <th class="text-center">Estado</th>
                 <th class="text-right">Total $</th>
               </tr>
             </thead>
@@ -45,6 +46,7 @@
                   {{ order.buyer.phone }}
                 </td>
                 <td class="text-left">{{ order.buyer.address }}</td>
+                <td class="text-center">{{ "entregado" }}</td>
                 <td class="text-right">{{ order.totalAmount }}</td>
               </tr>
             </tbody>
