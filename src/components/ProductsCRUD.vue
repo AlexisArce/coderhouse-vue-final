@@ -108,6 +108,8 @@
 </template>
 
 <script>
+import axios from "axios";
+import { Notification } from "element-ui";
 import ProductsForm from "./ProductsForm";
 
 export default {
@@ -177,6 +179,17 @@ export default {
         Object.assign(this.products[this.editedIndex], this.editedItem);
       } else {
         this.products.push(this.editedItem);
+        const baseUrl = process.env.VUE_APP_ROOT_API;
+        axios
+          .post(`${baseUrl}/Products`, this.editedItem)
+          .then(function () {
+            this.initialize();
+            Notification.success({
+              title: "Producto creado",
+              message: "El nuevo producto fue agregado al menú",
+            });
+          })
+          .catch(function () {});
       }
       this.close();
     },
